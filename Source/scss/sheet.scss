@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cardo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cardo:wght@300;500;700&display=swap');
 
 $urlbase: "https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main";
 
@@ -23,6 +23,7 @@ $fontblack: #333;
 	padding: 0 !important;
 	font-family: "Cardo";
 	font-size: 16px;
+	min-width: 800px;
 
 	div, span, textarea, ul, li, span, label {
 		box-sizing: border-box;
@@ -47,7 +48,7 @@ $fontblack: #333;
 		padding: 0;
 		display: flex;
 		width: auto;
-		color: $fontblack;
+		color: #000;
 		font: inherit;
 		flex-wrap: wrap;
 
@@ -296,6 +297,10 @@ $fontblack: #333;
 	flex-shrink:0;
 }
 
+.col30 {
+	width: 30%;
+	flex-shrink:0;
+}
 .col33 {
 	width: 33.3%;
 	flex-shrink:0;

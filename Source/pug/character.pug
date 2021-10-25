@@ -14,7 +14,7 @@
 .freebootersheet.flex-wrap
 
     //Left Column
-    .col33.generalinfo
+    .col30.generalinfo
         .label.title(data-i18n='freebooter')
         +text-input('freebooter_name', 'entername')
         .label.title(data-i18n='alignment')
@@ -23,7 +23,7 @@
         +textarea('relationships', 'enterrelationships')
 
     //Middle Column
-    .col33.tracks.flex-wrap
+    .col40.tracks.flex-wrap
         .col50
             .label.title.stresslabel(data-i18n='stress')
         .col50
@@ -98,7 +98,11 @@
                 .sublabel No Actions
 
     //Right Column
-    .col33.possessions
+    .col30.possessions.flex-wrap
+        .col50
+            .title.label Loadout
+        .col50
+            .title.label Stash
 
     .col33.culture
     .col33.lineage

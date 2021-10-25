@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cardo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cardo:wght@300;500;700&display=swap");
 .charsheet {
   flex-wrap: wrap;
   color: #333;
@@ -10,6 +10,7 @@
   padding: 0 !important;
   font-family: "Cardo";
   font-size: 16px;
+  min-width: 800px;
 }
 .charsheet div, .charsheet span, .charsheet textarea, .charsheet ul, .charsheet li, .charsheet span, .charsheet label {
   box-sizing: border-box;
@@ -32,7 +33,7 @@
   padding: 0;
   display: flex;
   width: auto;
-  color: #333;
+  color: #000;
   font: inherit;
   flex-wrap: wrap;
 }
@@ -248,6 +249,10 @@
 }
 .col37 {
   width: 37%;
+  flex-shrink: 0;
+}
+.col30 {
+  width: 30%;
   flex-shrink: 0;
 }
 .col33 {
