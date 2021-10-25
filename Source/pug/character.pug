@@ -2,7 +2,7 @@
 
 .type-selector.flex-wrap
     .col100
-        h1 Select if this will be a single Freebooter Sheet or a Faction Sheet
+        h1(data-i18n='choosesheetcopy')
     .col100
         select(name='attr_freebooterorfaction')
             optgroup
@@ -30,8 +30,8 @@
             .label.title.harmlabel(data-i18n='harm')
         .trackholder
             .lefttrack
-                .label Relaxed
-                .sublabel +Minor
+                .label(data-i18n='relaxed')
+                .sublabel(data-i18n='+minor')
             .centertrack
                 .centertrackrow
                     .hexboxcontainer
@@ -44,14 +44,14 @@
                     .hexboxcontainer
                         +checkbox('harm2','hexbox')
             .righttrack 
-                .label Healthy
-                .sublabel no penalty
+                .label(data-i18n='healthy')
+                .sublabel(data-i18n='nopenalty')
 
         .trackspacer
         .trackholder
             .lefttrack
-                .label Tense
-                .sublabel +Moderate
+                .label(data-i18n='tense')
+                .sublabel(data-i18n='+moderate')
             .centertrack
                 .centertrackrow
                     .hexboxcontainer
@@ -69,14 +69,14 @@
                     .hexboxcontainer
                         +checkbox('harm5','hexbox')
             .righttrack 
-                .label Wounded
-                .sublabel Reduced effect
+                .label(data-i18n='wounded')
+                .sublabel(data-i18n='reducedeffect')
  
         .trackspacer
         .trackholder
             .lefttrack
-                .label Overloaded
-                .sublabel +Major
+                .label(data-i18n='overloaded')
+                .sublabel(data-i18n='+major')
             .centertrack
                 .centertrackrow
                     .hexboxcontainer
@@ -94,15 +94,17 @@
                     .hexboxcontainer
                         +checkbox('harm8','hexbox')
             .righttrack 
-                .label Incapacitated
-                .sublabel No Actions
+                .label(data-i18n='incapacitated')
+                .sublabel(data-i18n='noactions')
 
     //Right Column
     .col30.possessions.flex-wrap
         .col50
-            .title.label Loadout
+            .title.label(data-i18n='loadout')
+            .hexboxcontainer
+                +checkbox('lightloadout', 'hexbox')
         .col50
-            .title.label Stash
+            .title.label(data-i18n='stash')
 
     .col33.culture
     .col33.lineage

@@ -218,40 +218,6 @@ $fontblack: #333;
 
 
 
-
-
-//CSS for hiding sheet pieces based on checked items
-//This checks the value of the item with the sheettype class
-.sheettype[value = "0"] ~ .freebootersheet,
-.sheettype[value = "2"] ~ .freebootersheet,
-.sheettype[value = "0"] ~ .factionsheet,
-.sheettype[value = "1"] ~ .factionsheet,
-.sheettype[value = "1"] ~ .type-selector, 
-.sheettype[value = "2"] ~ .type-selector {
-	display:none;
-}
-
-.sheettype[value="1"] ~ .freebootersheet,
-.sheettype[value="2"] ~ .factionsheet,
-.sheettype[value="0"] ~ .type-selector {
-	display:flex;
-}
-
-
-
-
-
-.flexwidth {
-	&[value="0"] ~ .sheet-container {
-		width: 860px;
-	}
-	&[value="1"] ~ .sheet-container {
-		min-width: 860px;
-		max-width: 1190px;
-	}
-}
-
-
 /* COLUMN LAYOUT */
 .flex {
 	display: flex;
@@ -394,6 +360,42 @@ textarea.smallcaps {
 } 
 
 
+
+
+
+//CSS for hiding sheet pieces based on checked items
+//This checks the value of the item with the sheettype class
+.sheettype[value = "0"] ~ .freebootersheet,
+.sheettype[value = "2"] ~ .freebootersheet,
+.sheettype[value = "0"] ~ .factionsheet,
+.sheettype[value = "1"] ~ .factionsheet,
+.sheettype[value = "1"] ~ .type-selector, 
+.sheettype[value = "2"] ~ .type-selector {
+	display:none;
+}
+
+.sheettype[value="1"] ~ .freebootersheet,
+.sheettype[value="2"] ~ .factionsheet,
+.sheettype[value="0"] ~ .type-selector {
+	display:flex;
+}
+
+
+.type-selector{
+	margin-top:30px;
+	justify-content: center;
+	text-align: center;
+
+	select {
+		margin-top: 30px;
+	}
+}
+
+
+
+
+
+
 .tracks{
 	padding-left: 5px;
 	padding-right: 5px;
@@ -465,9 +467,45 @@ textarea.smallcaps {
 	.hexbox:hover + span {
 		opacity: 0.7;
 	}
-	
-
 }
 
+.possessions{
+	.title{
+		margin: 0 5px;
+	}
 
+	$xpboxwidth:60px;
+	$xpboxcontainerwidth: 60px;
+	$xpboxmargin:1.5*$xpboxwidth - 0.5*$xpboxcontainerwidth;
+	$xpboxpadding:1px;
+	
+	.hexboxcontainer{
+		background-color: $headergrey;
+		width:$xpboxcontainerwidth+2*$xpboxpadding;
+		padding-left: $xpboxpadding;
+		padding-right: $xpboxpadding;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	/* CHECKBOXES */
+	.hexbox {
+		margin-right: -$xpboxmargin;
+	}
+	input.hexbox, .hexbox + span {
+		height: $xpboxwidth;
+		width: $xpboxwidth;
+		flex: 0 0 auto;
+	}
 
+	.hexbox + span {
+		background-image: url($urlbase+"/Images/hex-v-unchecked.svg");
+	}
+	.hexbox:checked + span {
+		background-image: url($urlbase+"/Images/hex-v-checked.svg");
+	}
+	.hexbox:hover + span {
+		opacity: 0.7;
+	}
+
+}
