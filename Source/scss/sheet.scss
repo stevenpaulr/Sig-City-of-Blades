@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo:wght@400;700&display=swap');
 
+$urlbase: "https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main";
+
 $lightest: #d8d8d8;
 $lighter: #c7c7c7;
 $darkgrey: #b4b4b4;
@@ -424,11 +426,11 @@ textarea.smallcaps {
 
 	.centertrackrow{
 		display:flex;
-		width:88px;	
+		width:84px;	
 	}
 
 	$xpboxwidth:30px;
-	$xpboxpadding:2px;
+	$xpboxpadding:1px;
 	
 	.hexboxcontainer{
 		background-color: $headergrey;
@@ -450,10 +452,10 @@ textarea.smallcaps {
 	}
 
 	.hexbox + span {
-		border: 2px solid black;
+		background-image: url($urlbase+"/Images/hex-v-unchecked.svg");
 	}
 	.hexbox:checked + span {
-		background: red;
+		background-image: url($urlbase+"/Images/hex-v-checked.svg");
 	}
 	.hexbox:hover + span {
 		opacity: 0.7;

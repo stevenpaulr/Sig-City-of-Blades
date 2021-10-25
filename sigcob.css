@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cardo:wght@400;700&display=swap");
 .charsheet {
   flex-wrap: wrap;
   color: #333;
@@ -365,13 +365,13 @@ textarea.smallcaps {
 }
 .centertrack .centertrackrow {
   display: flex;
-  width: 88px;
+  width: 84px;
 }
 .centertrack .hexboxcontainer {
   background-color: #808080;
-  width: 34px;
-  padding-left: 2px;
-  padding-right: 2px;
+  width: 32px;
+  padding-left: 1px;
+  padding-right: 1px;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -384,10 +384,10 @@ textarea.smallcaps {
   flex: 0 0 auto;
 }
 .centertrack .hexbox + span {
-  border: 2px solid black;
+  background-image: url("https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main/Images/hex-v-unchecked.svg");
 }
 .centertrack .hexbox:checked + span {
-  background: red;
+  background-image: url("https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main/Images/hex-v-checked.svg");
 }
 .centertrack .hexbox:hover + span {
   opacity: 0.7;
