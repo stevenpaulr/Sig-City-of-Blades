@@ -327,7 +327,7 @@ textarea.smallcaps {
   color: black;
   -webkit-text-fill-color: white;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  background-color: #808080;
+  background-color: #aaa;
   padding: 3px 5px;
   border-radius: 0;
 }
@@ -368,7 +368,7 @@ textarea.smallcaps {
   width: 84px;
 }
 .centertrack .hexboxcontainer {
-  background-color: #808080;
+  background-color: #aaa;
   width: 32px;
   padding-left: 1px;
   padding-right: 1px;
