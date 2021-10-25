@@ -1,0 +1,108 @@
++hidden-input('sheettype')(value=0).sheettype
+
+.type-selector.flex-wrap
+    .col100
+        h1 Select if this will be a single Freebooter Sheet or a Faction Sheet
+    .col100
+        select(name='attr_freebooterorfaction')
+            optgroup
+                option() #{translation["freebooterorfaction"]}
+                option() #{translation["freebootersheet"]}
+                option() #{translation["factionsheet"]}
+                
+
+.freebootersheet.flex-wrap
+
+    //Left Column
+    .col33.generalinfo
+        .label.title(data-i18n='freebooter')
+        +text-input('freebooter_name', 'entername')
+        .label.title(data-i18n='alignment')
+        +text-input('alignment', 'enteralignment')
+        .label.title(data-i18n='relationships')
+        +textarea('relationships', 'enterrelationships')
+
+    //Middle Column
+    .col33.tracks.flex-wrap
+        .col50
+            .label.title.stresslabel(data-i18n='stress')
+        .col50
+            .label.title.harmlabel(data-i18n='harm')
+        .trackholder
+            .lefttrack
+                .label Relaxed
+                .sublabel +Minor
+            .centertrack
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress1','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm1','hexbox')
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress2','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm2','hexbox')
+            .righttrack 
+                .label Healthy
+                .sublabel no penalty
+
+        .trackspacer
+        .trackholder
+            .lefttrack
+                .label Tense
+                .sublabel +Moderate
+            .centertrack
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress3','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm3','hexbox')
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress4','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm4','hexbox')
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress5','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm5','hexbox')
+            .righttrack 
+                .label Wounded
+                .sublabel Reduced effect
+ 
+        .trackspacer
+        .trackholder
+            .lefttrack
+                .label Overloaded
+                .sublabel +Major
+            .centertrack
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress6','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm6','hexbox')
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress7','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm7','hexbox')
+                .centertrackrow
+                    .hexboxcontainer
+                        +checkbox('stress8','hexbox')
+                    .hexboxcontainer
+                        +checkbox('harm8','hexbox')
+            .righttrack 
+                .label Incapacitated
+                .sublabel No Actions
+
+    //Right Column
+    .col33.possessions
+
+    .col33.culture
+    .col33.lineage
+    .col33.devotion
+
+.factionsheet.flex-wrap
+    h1 Faction Sheet 

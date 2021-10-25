@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap");
+.charsheet {
+  flex-wrap: wrap;
+  color: #333;
+  position: relative;
+  top: -11px;
+  line-height: 18px;
+  cursor: default;
+  box-sizing: border-box;
+  padding: 0 !important;
+  font-family: "Cardo";
+  font-size: 16px;
+}
+.charsheet div, .charsheet span, .charsheet textarea, .charsheet ul, .charsheet li, .charsheet span, .charsheet label {
+  box-sizing: border-box;
+}
+.charsheet button[type=roll] {
+  text-shadow: none;
+  background: transparent;
+  box-shadow: none;
+  font-weight: bold;
+  font-family: inherit;
+  outline: none;
+  border-radius: 0;
+  transition: all 0.2s;
+}
+.charsheet button[type=roll].btn::before {
+  content: "";
+}
+.charsheet label {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: auto;
+  color: #333;
+  font: inherit;
+  flex-wrap: wrap;
+}
+.charsheet label input[type=checkbox], .charsheet label input[type=radio] {
+  position: absolute;
+}
+.charsheet label:hover input[type=checkbox] + span, .charsheet label:hover input[type=radio] + span {
+  opacity: 0.7;
+}
+.charsheet input[type=text], .charsheet textarea {
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  background: transparent;
+  width: 100%;
+  padding: 0;
+  margin: 5px 0 10px 0;
+  color: #333;
+  border-radius: 0;
+  transition: all 0.2s, height 0.4s;
+}
+.charsheet input[type=text] {
+  text-align: center;
+}
+.charsheet textarea {
+  resize: vertical;
+  display: block;
+}
+.charsheet textarea:active {
+  transition: height 0s;
+}
+.charsheet input[type=number] {
+  border-color: #c7c7c7;
+  color: #333;
+  box-shadow: none;
+}
+.charsheet input[type=checkbox], .charsheet input[type=radio] {
+  opacity: 0;
+  z-index: 1;
+  -moz-appearance: none;
+  position: relative;
+}
+.charsheet input[type=checkbox] + span, .charsheet input[type=radio] + span {
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s, opacity 0s;
+  position: absolute;
+}
+.charsheet ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #c7c7c7;
+}
+.charsheet :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #c7c7c7;
+  opacity: 1;
+}
+.charsheet ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #c7c7c7;
+  opacity: 1;
+}
+.charsheet :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c7c7c7;
+}
+.charsheet ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #c7c7c7;
+}
+.charsheet ::placeholder {
+  /* Most modern browsers support this now. */
+  color: #c7c7c7;
+}
+.charsheet ul {
+  list-style: none;
+  margin: 0;
+}
+.charsheet li {
+  position: relative;
+}
+.charsheet li::before {
+  transform: rotate(45deg) scale(0.9);
+  font-family: Georgia, serif;
+  content: '■';
+  left: 0;
+  top: -.1em;
+  position: absolute;
+}
+.charsheet button {
+  background-color: white;
+  background-image: none;
+  border-radius: 0;
+}
+.charsheet button[type=roll].sheet-inherit, .charsheet input[type=text].sheet-inherit {
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+.charsheet .sheet-space-after::after {
+  content: ' ';
+}
+.sheet-focus-shadow[value="1"] ~ .sheet-wrapper textarea:focus, .sheet-focus-shadow[value="1"] ~ .sheet-wrapper input[type=text]:focus, .sheet-focus-shadow[value="1"] ~ .sheet-wrapper input[type=number]:focus {
+  box-shadow: inset 0 0 1px 1px rgba(66, 66, 66, 0.3), 0 0 2px 1px rgba(66, 66, 66, 0.3);
+}
+.sheet-hidden {
+  display: none !important;
+}
+.sheet-wrapper {
+  position: relative;
+}
+/* REPEATING SECTION CONTROLS */
+/* REPEATING SECTION CONTROLS */
+.repcontrol {
+  display: flex;
+}
+.repcontrol .repcontrol_edit {
+  margin-left: auto;
+  order: 1;
+}
+.repcontrol button {
+  background: transparent;
+  color: #777;
+  border-radius: 0;
+  border-color: #b4b4b4;
+  transition: all 0.2s;
+  font-family: pictos;
+  font-size: 0;
+  font-weight: bold;
+  padding: 5px 3px 2px;
+  line-height: 8px;
+  margin-top: 5px;
+}
+.repcontrol button:hover {
+  color: black;
+  border-color: black;
+  background: #c7c7c7;
+}
+.repcontrol button.repcontrol_edit::after {
+  content: "(";
+}
+.repcontrol button.repcontrol_add::after {
+  content: "&";
+}
+.repcontrol button.repcontrol_edit::after, .repcontrol button.repcontrol_add::after {
+  font-size: 12px;
+}
+.repcontainer.editmode + .repcontrol button.repcontrol_edit::after {
+  content: ")";
+}
+.sheet-free-repcontrol .repcontrol {
+  margin-top: 3px;
+}
+.sheettype[value="0"] ~ .freebootersheet,
+.sheettype[value="2"] ~ .freebootersheet,
+.sheettype[value="0"] ~ .factionsheet,
+.sheettype[value="1"] ~ .factionsheet,
+.sheettype[value="1"] ~ .type-selector,
+.sheettype[value="2"] ~ .type-selector {
+  display: none;
+}
+.sheettype[value="1"] ~ .freebootersheet,
+.sheettype[value="2"] ~ .factionsheet,
+.sheettype[value="0"] ~ .type-selector {
+  display: flex;
+}
+.flexwidth[value="0"] ~ .sheet-container {
+  width: 860px;
+}
+.flexwidth[value="1"] ~ .sheet-container {
+  min-width: 860px;
+  max-width: 1190px;
+}
+/* COLUMN LAYOUT */
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.flex-center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-column {
+  padding-left: 5px;
+}
+.col10 {
+  width: 10%;
+  flex-shrink: 0;
+}
+.col15 {
+  width: 15%;
+  flex-shrink: 0;
+}
+.col42 {
+  width: 42.5%;
+  flex-shrink: 0;
+}
+.col47 {
+  width: 47%;
+  flex-shrink: 0;
+}
+.col53 {
+  width: 53%;
+  flex-shrink: 0;
+}
+.col37 {
+  width: 37%;
+  flex-shrink: 0;
+}
+.col33 {
+  width: 33.3%;
+  flex-shrink: 0;
+}
+.col40 {
+  width: 40%;
+  flex-shrink: 0;
+}
+.col24b {
+  width: 24.25%;
+  flex-shrink: 0;
+}
+.col50 {
+  width: 50%;
+  flex-shrink: 0;
+}
+.col52b {
+  width: 52%;
+  flex-shrink: 0;
+}
+.col55 {
+  width: 55%;
+  flex-shrink: 0;
+}
+.col45 {
+  width: 45%;
+  flex-shrink: 0;
+}
+.col63 {
+  width: 63%;
+  flex-shrink: 0;
+}
+.col100 {
+  width: 100%;
+  flex-shrink: 0;
+}
+/* FONT STYLES */
+.label,
+input[type=text].label,
+textarea.label,
+button[type=roll].label {
+  font-weight: bold;
+  color: #333;
+  padding: 0;
+  font-size: 100%;
+}
+.sublabel {
+  color: #333;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.smallcaps,
+input[type=text].smallcaps,
+textarea.smallcaps {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.text {
+  color: black;
+  text-align: justify;
+  padding: 3px 0 2px;
+  line-height: 13px;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: black;
+  -webkit-text-fill-color: white;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background-color: #808080;
+  padding: 3px 5px;
+  border-radius: 0;
+}
+.tracks {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.tracks .stresslabel {
+  margin-right: 5px;
+}
+.tracks .harmlabel {
+  margin-left: 5px;
+}
+.trackholder {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.trackspacer {
+  margin: 5px 25px 0;
+}
+.lefttrack,
+.righttrack {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50%;
+  padding-top: 10px;
+}
+.lefttrack {
+  justify-content: right;
+  text-align: right;
+}
+.centertrack {
+  /* CHECKBOXES */
+}
+.centertrack .centertrackrow {
+  display: flex;
+  width: 88px;
+}
+.centertrack .hexboxcontainer {
+  background-color: #808080;
+  width: 34px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.centertrack .hexbox {
+  margin-right: -30px;
+}
+.centertrack input.hexbox, .centertrack .hexbox + span {
+  height: 30px;
+  width: 30px;
+  flex: 0 0 auto;
+}
+.centertrack .hexbox + span {
+  border: 2px solid black;
+}
+.centertrack .hexbox:checked + span {
+  background: red;
+}
+.centertrack .hexbox:hover + span {
+  opacity: 0.7;
+}
+.sheet-rolltemplate-sig table {
+  border: 1px solid black;
+  width: 100%;
+}
+.sheet-rolltemplate-sig th {
+  padding: 5px;
+  color: white;
+  background-color: black;
+  font-family: "Courier Prime";
+  text-align: center;
+  font-size: 18px;
+}
+.sheet-rolltemplate-sig td {
+  padding: 5px;
+  background-color: white;
+  font-family: "Courier Prime";
+}
+.sheet-rolltemplate-sig .inlinerollresult {
+  background-color: black;
+  border: 1px solid black !important;
+  color: white;
+  font-size: 20px;
+}
+.sheet-rolltemplate-sig .inlinerollresult .fullfail, .sheet-rolltemplate-sig .inlinerollresult .fullcrit {
+  border: 1px solid black;
+}
+.sheet-rolltemplate-sig .sheet-result {
+  text-align: right;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "sig-city-of-blades",
+  "version": "1.0.0",
+  "description": "Character Sheet for Sig: City of Blades",
+  "dependencies": {
+    "jstransformer": "^1.0.0",
+    "node-sass": "^6.0.1",
+    "pug": "^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenpaulr/Sig-City-of-Blades.git"
+  },
+  "keywords": [
+    "Roll20"
+  ],
+  "author": "Steve Radabaugh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenpaulr/Sig-City-of-Blades/issues"
+  },
+  "homepage": "https://github.com/stevenpaulr/Sig-City-of-Blades#readme"
+}

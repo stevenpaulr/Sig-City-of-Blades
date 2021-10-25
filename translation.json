@@ -1,0 +1,14 @@
+{
+	"alignment":"Alignment",
+	"entername": "enter your name and title",
+	"enteralignment": "enter your alignment",
+	"enterrelationships" : "enter your relationships",
+	"freebooterorfaction" : "Freebooter or Faction",
+	"freebootersheet" : "Freebooter Sheet",
+	"factionsheet": "Faction Sheet",
+	"freebooter": "Freebooter",
+	"harm":"harm",
+	"name": "Name",
+	"relationships": "Relationships",
+	"stress":"stress"
+}
