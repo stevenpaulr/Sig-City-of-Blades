@@ -20,11 +20,11 @@
     <!--Left Column-->
     <div class="col30 generalinfo">
       <div class="label title" data-i18n="freebooter"></div>
-      <input type="text" spellcheck="false" name="attr_freebooter_name" placeholder="enter your name and title"/>
+      <input type="text" spellcheck="false" name="attr_freebooter_name" placeholder="Enter your Name and Title"/>
       <div class="label title" data-i18n="alignment"></div>
-      <input type="text" spellcheck="false" name="attr_alignment" placeholder="enter your alignment"/>
+      <input type="text" spellcheck="false" name="attr_alignment" placeholder="Enter your Alignment"/>
       <div class="label title" data-i18n="relationships"></div>
-      <textarea spellcheck="false" name="attr_relationships" placeholder="enter your relationships"></textarea>
+      <textarea spellcheck="false" name="attr_relationships" placeholder="Enter your Relationships"></textarea>
     </div>
     <!--Middle Column-->
     <div class="col40 tracks flex-wrap">
@@ -36,8 +36,8 @@
       </div>
       <div class="trackholder">
         <div class="lefttrack">
-          <div class="label">Relaxed</div>
-          <div class="sublabel">+Minor</div>
+          <div class="label" data-i18n="relaxed"></div>
+          <div class="sublabel" data-i18n="+minor"></div>
         </div>
         <div class="centertrack">
           <div class="centertrackrow">
@@ -58,15 +58,15 @@
           </div>
         </div>
         <div class="righttrack"> 
-          <div class="label">Healthy</div>
-          <div class="sublabel">no penalty</div>
+          <div class="label" data-i18n="healthy"></div>
+          <div class="sublabel" data-i18n="nopenalty"></div>
         </div>
       </div>
       <div class="trackspacer"></div>
       <div class="trackholder">
         <div class="lefttrack">
-          <div class="label">Tense</div>
-          <div class="sublabel">+Moderate</div>
+          <div class="label" data-i18n="tense"></div>
+          <div class="sublabel" data-i18n="+moderate"></div>
         </div>
         <div class="centertrack">
           <div class="centertrackrow">
@@ -95,15 +95,15 @@
           </div>
         </div>
         <div class="righttrack"> 
-          <div class="label">Wounded</div>
-          <div class="sublabel">Reduced effect</div>
+          <div class="label" data-i18n="wounded"></div>
+          <div class="sublabel" data-i18n="reducedeffect"></div>
         </div>
       </div>
       <div class="trackspacer"></div>
       <div class="trackholder">
         <div class="lefttrack">
-          <div class="label">Overloaded</div>
-          <div class="sublabel">+Major</div>
+          <div class="label" data-i18n="overloaded"></div>
+          <div class="sublabel" data-i18n="+major"></div>
         </div>
         <div class="centertrack">
           <div class="centertrackrow">
@@ -132,21 +132,31 @@
           </div>
         </div>
         <div class="righttrack"> 
-          <div class="label">Incapacitated</div>
-          <div class="sublabel">No Actions</div>
+          <div class="label" data-i18n="incapacitated"></div>
+          <div class="sublabel" data-i18n="noactions"></div>
         </div>
       </div>
     </div>
     <!--Right Column-->
     <div class="col30 possessions flex-wrap">
       <div class="col50">
-        <div class="title label">Loadout</div>
+        <div class="title label" data-i18n="loadout"></div>
         <div class="hexboxcontainer">
-          <input class="hexbox" type="checkbox" name="attr_lightloadout" value="1"/><span class="hexbox"></span>
+          <input class="hexbox" type="checkbox" name="attr_lightloadout" value="1"/><span class="hexbox">
+            <div class="loadoutlabel" data-i18n="light"></div></span>
         </div>
+        <div class="hexboxcontainer">
+          <input class="hexbox" type="checkbox" name="attr_mediumloadout" value="1"/><span class="hexbox">
+            <div class="loadoutlabel" data-i18n="medium"></div></span>
+        </div>
+        <div class="hexboxcontainer">
+          <input class="hexbox" type="checkbox" name="attr_heavyloadout" value="1"/><span class="hexbox">
+            <div class="loadoutlabel" data-i18n="heavy"></div></span>
+        </div>
+        <div class="title label purselabel" data-i18n="purse"></div>
       </div>
       <div class="col50">
-        <div class="title label">Stash</div>
+        <div class="title label" data-i18n="stash"></div>
       </div>
     </div>
     <div class="col33 culture"></div>
@@ -154,7 +164,7 @@
     <div class="col33 devotion"></div>
   </div>
   <div class="factionsheet flex-wrap">
-    <h1>Faction Sheet </h1>
+    <h1>Faction Sheet</h1>
   </div>
 </div>
 <!--Mail Roll Template-->

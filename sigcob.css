@@ -404,11 +404,22 @@ textarea.smallcaps {
 .possessions .title {
   margin: 0 5px;
 }
+.possessions .purselabel {
+  margin-top: 20px;
+}
+.possessions .loadoutlabel {
+  color: #aaa;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
 .possessions .hexboxcontainer {
-  background-color: #aaa;
-  width: 62px;
-  padding-left: 1px;
-  padding-right: 1px;
+  width: 60px;
+  padding-left: 0;
+  padding-right: 0;
   margin-left: auto;
   margin-right: auto;
 }

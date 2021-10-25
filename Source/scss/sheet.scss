@@ -474,13 +474,29 @@ textarea.smallcaps {
 		margin: 0 5px;
 	}
 
+	.purselabel{
+		margin-top:20px;
+	}
+
+
+
 	$xpboxwidth:60px;
 	$xpboxcontainerwidth: 60px;
 	$xpboxmargin:1.5*$xpboxwidth - 0.5*$xpboxcontainerwidth;
-	$xpboxpadding:1px;
+	$xpboxpadding:0;
 	
+	.loadoutlabel{
+		color:$headergrey;
+		display: flex;
+		height: $xpboxwidth;
+		width: $xpboxwidth;
+		justify-content: center;
+		align-items: center;
+		font-size: 12px; 
+	}
+
 	.hexboxcontainer{
-		background-color: $headergrey;
+//		background-color: $headergrey;
 		width:$xpboxcontainerwidth+2*$xpboxpadding;
 		padding-left: $xpboxpadding;
 		padding-right: $xpboxpadding;

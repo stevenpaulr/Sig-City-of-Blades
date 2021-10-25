@@ -103,6 +103,17 @@
             .title.label(data-i18n='loadout')
             .hexboxcontainer
                 +checkbox('lightloadout', 'hexbox')
+                    .loadoutlabel(data-i18n='light')
+            .hexboxcontainer
+                +checkbox('mediumloadout', 'hexbox')
+                    .loadoutlabel(data-i18n='medium')
+            .hexboxcontainer
+                +checkbox('heavyloadout', 'hexbox')
+                    .loadoutlabel(data-i18n='heavy')
+
+            .title.label.purselabel(data-i18n="purse")
+
+
         .col50
             .title.label(data-i18n='stash')
 
@@ -111,4 +122,4 @@
     .col33.devotion
 
 .factionsheet.flex-wrap
-    h1 Faction Sheet 
+    h1 Faction Sheet
