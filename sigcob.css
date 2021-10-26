@@ -440,6 +440,9 @@ textarea.smallcaps {
 .possessions .hexbox:hover + span {
   opacity: 0.7;
 }
+.possessions .test {
+  color: red;
+}
 .sheet-rolltemplate-sig table {
   border: 1px solid black;
   width: 100%;

@@ -436,6 +436,11 @@ textarea.smallcaps {
 		width:84px;	
 	}
 
+	.burnelim{
+		background-image: url($urlbase+"/Images/6.png");
+		height: 300px;
+	}
+	
 	$xpboxwidth:30px;
 	$xpboxpadding:1px;
 	
@@ -477,8 +482,6 @@ textarea.smallcaps {
 	.purselabel{
 		margin-top:20px;
 	}
-
-
 
 	$xpboxwidth:60px;
 	$xpboxcontainerwidth: 60px;
@@ -522,6 +525,40 @@ textarea.smallcaps {
 	}
 	.hexbox:hover + span {
 		opacity: 0.7;
+	}
+
+	.sixcheckbox{
+		$xpboxwidth:60px;
+		$xpboxcontainerwidth: 60px;
+		$xpboxmargin:1.5*$xpboxwidth - 0.5*$xpboxcontainerwidth;
+		$xpboxpadding:0;
+		
+		width:$xpboxcontainerwidth+2*$xpboxpadding;
+		padding-left: $xpboxpadding;
+		padding-right: $xpboxpadding;
+		margin-left: auto;
+		margin-right: auto;
+
+	/* CHECKBOXES */
+	.hexbox {
+		margin-right: -$xpboxmargin;
+	}
+	input.hexbox, .hexbox + span {
+		height: $xpboxwidth;
+		width: $xpboxwidth;
+		flex: 0 0 auto;
+	}
+
+	.hexbox + span {
+		background-image: url($urlbase+"/Images/hex-h-unchecked.svg");
+	}
+	.hexbox:checked + span {
+		background-image: url($urlbase+"/Images/hex-h-checked.svg");
+	}
+	.hexbox:hover + span {
+		opacity: 0.7;
+	}
+
 	}
 
 }
