@@ -97,6 +97,23 @@
                 .label(data-i18n='incapacitated')
                 .sublabel(data-i18n='noactions')
         .trackholder.burnelim
+            .trackholder
+                .beleft
+                    .label(data-i18n="burnout")
+                .burnelimcenter1
+                .beright
+                    .label(data-i18n="eliminated")
+            .trackholder
+                .beleft
+                    .label(data-i18n="vice")
+                    .hexboxcontainer
+                        +checkbox('vice','hexbox')
+                .burnelimcenter2
+                .beright
+                    .hexboxcontainer
+                        +checkbox('dead','hexbox')
+                    .label(data-i18n="dead")
+                
 
     //Right Column
     .col30.possessions.flex-wrap

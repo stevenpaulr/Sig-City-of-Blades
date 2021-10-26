@@ -398,6 +398,77 @@ textarea.smallcaps {
 .centertrack .hexbox:hover + span {
   opacity: 0.7;
 }
+.burnelim {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  flex-wrap: wrap;
+  /* CHECKBOXES */
+}
+.burnelim .burnelimcenter1 {
+  width: 200px;
+}
+.burnelim .burnelimcenter2 {
+  width: 100px;
+}
+.burnelim .burnelimcenter3 {
+  width: 100px;
+}
+.burnelim .burnelimcenter4 {
+  width: 100px;
+}
+.burnelim .burnelimcenter5 {
+  width: 100px;
+}
+.burnelim .beleft,
+.burnelim .beright {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50%;
+  margin-top: 10px;
+}
+.burnelim .beleft {
+  justify-content: right;
+}
+.burnelim .hexboxcontainer {
+  background-color: #aaa;
+  width: 32px;
+  padding-left: 1px;
+  padding-right: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.burnelim .hexbox {
+  margin-right: -30px;
+}
+.burnelim input.hexbox, .burnelim .hexbox + span {
+  height: 30px;
+  width: 30px;
+  flex: 0 0 auto;
+}
+.burnelim .hexbox + span {
+  background-image: url("https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main/Images/hex-v-unchecked.svg");
+}
+.burnelim .hexbox:checked + span {
+  background-image: url("https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main/Images/hex-v-checked.svg");
+}
+.burnelim .hexbox:hover + span {
+  opacity: 0.7;
+}
+.burnelim::before {
+  content: "";
+  background-image: url("https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main/Images/8.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
 .possessions {
   /* CHECKBOXES */
 }
@@ -440,8 +511,30 @@ textarea.smallcaps {
 .possessions .hexbox:hover + span {
   opacity: 0.7;
 }
-.possessions .test {
-  color: red;
+.possessions .sixcheckbox {
+  width: 60px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  /* CHECKBOXES */
+}
+.possessions .sixcheckbox .hexbox {
+  margin-right: -60px;
+}
+.possessions .sixcheckbox input.hexbox, .possessions .sixcheckbox .hexbox + span {
+  height: 60px;
+  width: 60px;
+  flex: 0 0 auto;
+}
+.possessions .sixcheckbox .hexbox + span {
+  background-image: url("https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main/Images/hex-h-unchecked.svg");
+}
+.possessions .sixcheckbox .hexbox:checked + span {
+  background-image: url("https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main/Images/hex-h-checked.svg");
+}
+.possessions .sixcheckbox .hexbox:hover + span {
+  opacity: 0.7;
 }
 .sheet-rolltemplate-sig table {
   border: 1px solid black;

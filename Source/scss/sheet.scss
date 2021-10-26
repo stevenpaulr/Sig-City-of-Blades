@@ -436,10 +436,7 @@ textarea.smallcaps {
 		width:84px;	
 	}
 
-	.burnelim{
-		background-image: url($urlbase+"/Images/6.png");
-		height: 300px;
-	}
+
 	
 	$xpboxwidth:30px;
 	$xpboxpadding:1px;
@@ -472,6 +469,82 @@ textarea.smallcaps {
 	.hexbox:hover + span {
 		opacity: 0.7;
 	}
+}
+
+.burnelim{
+	height: 200px;
+	width: 100%;
+
+	position: relative;
+	flex-wrap: wrap;
+
+	.burnelimcenter1{ width:200px}
+	.burnelimcenter2{ width:100px}
+	.burnelimcenter3{ width:100px}
+	.burnelimcenter4{ width:100px}
+	.burnelimcenter5{ width:100px}
+
+	.beleft,
+	.beright{
+		display: flex;
+		flex-grow:1;
+		flex-shrink: 1;
+		flex-basis: 50%;
+		margin-top:10px
+	}
+	.beleft{
+		justify-content: right;
+	}
+
+	$xpboxwidth:30px;
+	$xpboxpadding:1px;
+	
+	.hexboxcontainer{
+		width:$xpboxwidth+2*$xpboxpadding;
+		padding-left: $xpboxpadding;
+		padding-right: $xpboxpadding;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	
+	/* CHECKBOXES */
+	.hexbox {
+		margin-right: -$xpboxwidth;
+	}
+	input.hexbox, .hexbox + span {
+		height: $xpboxwidth;
+		width: $xpboxwidth;
+		flex: 0 0 auto;
+	}
+
+	.hexbox + span {
+		background-image: url($urlbase+"/Images/hex-v-unchecked.svg");
+	}
+	.hexbox:checked + span {
+		background-image: url($urlbase+"/Images/hex-v-checked.svg");
+	}
+	.hexbox:hover + span {
+		opacity: 0.7;
+	}
+
+	
+}
+
+.burnelim::before{
+	content:"";
+	background-image: url($urlbase+"/Images/8.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.7;
+
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+
+
 }
 
 .possessions{
