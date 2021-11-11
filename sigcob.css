@@ -498,6 +498,14 @@ button.title {
   align-items: center;
   font-size: 12px;
 }
+.possessions .downtimebuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+.possessions .downtimebuttons button {
+  margin: 2px;
+  padding: 2px;
+}
 .possessions .hexboxcontainer {
   background-image: linear-gradient(90deg, #fff 30%, #aaa 30%, #aaa 70%, #fff 67%);
   background-size: 100% 100%;

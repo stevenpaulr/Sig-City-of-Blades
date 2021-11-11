@@ -177,6 +177,13 @@
                 +6checkbox('stash3','hexbox')
                     .sixboxlabel 3
 
+            .downtimebuttons
+                +roll('fortune','fortune')(data-i18n="fortune roll").label
+                +hidden-input('fortune')(value=0)
+                +roll('preparation','preparation')(data-i18n="preparation roll").label
+                +hidden-input('preparation')(value=0)
+
+
 
     .col33.culture
         .playbook-selector

@@ -270,6 +270,12 @@
             <div class="sixboxlabel">3</div>
           </div>
         </div>
+        <div class="downtimebuttons">
+          <button class="label" type="action" name="act_roll" title="fortune" value="fortune" data-i18n="fortune roll"></button>
+          <input type="hidden" name="attr_fortune" value="0"/>
+          <button class="label" type="action" name="act_roll" title="preparation" value="preparation" data-i18n="preparation roll"></button>
+          <input type="hidden" name="attr_preparation" value="0"/>
+        </div>
       </div>
     </div>
     <div class="col33 culture">
@@ -1049,12 +1055,22 @@ on("clicked:roll", (event) => {
 	
 	console.log(event);
 	getAttrs([event.htmlAttributes.value], v => {
-		let statvalue = (v[Object.keys(v)[0]]);
+		let statvalue = (v[Object.keys(v)[0]]) ?? 0;
 		let statname = Object.keys(v)[0];
 		console.log("Stat Value: "+statvalue);
-		getQuery('?{Extra Dice?|0}').then(bonusdice => {
+		var question = "";
+		if(statname == "fortune" || statname == "preparation"){
+			question = '?{How many Dice?}';
+		} else {
+			question = '?{Extra Dice?|0}';
+		}
+		getQuery(question).then(bonusdice => {
 			console.log("Bonus Dice: "+bonusdice);
-			let numdice = parseInt(statvalue,10) + parseInt(bonusdice,10);
+			var numdice = parseInt(statvalue,10) + parseInt(bonusdice,10);
+			//This will make sure to give the value of zero instead of null
+			if(!numdice){
+				numdice = 0;
+			}
 			var rollexpr = "";
 			if(numdice == 0){
 				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[[2d6kl1]]}} {{dice=[[0]]}} {{effectpoints=[[0]]}} {{iscrit=[[0]]}}";

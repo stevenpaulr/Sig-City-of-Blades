@@ -243,16 +243,29 @@ on("clicked:roll", (event) => {
 
 	getAttrs([event.htmlAttributes.value], v => {
 
-		let statvalue = (v[Object.keys(v)[0]]);
+		let statvalue = (v[Object.keys(v)[0]]) ?? 0;
 		let statname = Object.keys(v)[0];
 
 		console.log("Stat Value: "+statvalue);
 
-		getQuery('?{Extra Dice?|0}').then(bonusdice => {
+		var question = "";
+		if(statname == "fortune" || statname == "preparation"){
+			question = '?{How many Dice?}';
+		} else {
+			question = '?{Extra Dice?|0}';
+		}
+
+		getQuery(question).then(bonusdice => {
 
 			console.log("Bonus Dice: "+bonusdice);
 
-			let numdice = parseInt(statvalue,10) + parseInt(bonusdice,10);
+			var numdice = parseInt(statvalue,10) + parseInt(bonusdice,10);
+
+			//This will make sure to give the value of zero instead of null
+			if(!numdice){
+				numdice = 0;
+			}
+
 
 			var rollexpr = "";
 
