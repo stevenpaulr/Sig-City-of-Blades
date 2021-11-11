@@ -103,68 +103,8 @@ fillRepeatingSectionFromData = (sectionName, dataList, autogen, callback) => {
 			mySetAttrs(setting, {}, callback);
 		});
 	});
-},
-
-diceMagic = num => {
-	const range = end => [...Array(end + 1).keys()].slice(1);
-	if (num > 0) return `dice=${range(num).map(() => "[[d6]]").join("&"+"#44"+"; ")}`;
-	else return "zerodice=[[d6]]&"+"#44"+"; [[d6]]";
-},
-buildRollFormula = base => {
-	return ` {{?{@{bonusdice}|${
-		[0, 1, 2, 3, 4, 5, 6, -1, -2, -3].map(n => `${n},${diceMagic(n + (parseInt(base) || 0))}`).join("|")
-	}}}}`;
-},
-buildNumdiceFormula = () => {
-	return ` {{?{${getTranslation("numberofdice")}|${
-		[0, 1, 2, 3, 4, 5, 6].map(n => `${n},${diceMagic(n)}`).join("|")
-	}}}}`;
-},
-
-emptyFirstRowIfUnnamed = sectionName => {
-	getSectionIDs(`repeating_${sectionName}`, idList => {
-		const id = idList[0];
-		getAttrs([`repeating_${sectionName}_${id}_name`], v => {
-			if (!v[`repeating_${sectionName}_${id}_name`]) {
-				removeRepeatingRow(`repeating_${sectionName}_${id}`);
-			}
-		});
-	});
-},
-handleBoxesFill = (name, upToFour) => {
-	on(`change:${name}1 change:${name}2 change:${name}3 change:${name}4`, event => {
-		if (event.sourceType !== "player") return;
-		getAttrs([event.sourceAttribute], v => {
-			const rName = event.sourceAttribute.slice(0, -1),
-				setting = {};
-			if (String(v[event.sourceAttribute]) === "1") {
-				switch (event.sourceAttribute.slice(-1)) {
-				case "4":
-					setting[`${rName}3`] = 1;
-					/* falls through */
-				case "3":
-					setting[`${rName}2`] = 1;
-					/* falls through */
-				case "2":
-					setting[`${rName}1`] = 1;
-				}
-			}
-			if (String(v[event.sourceAttribute]) === "0") {
-				switch (event.sourceAttribute.slice(-1)) {
-				case "1":
-					setting[`${rName}2`] = 0;
-					/* falls through */
-				case "2":
-					setting[`${rName}3`] = 0;
-					/* falls through */
-				case "3":
-					if (upToFour) setting[`${rName}4`] = 0;
-				}
-			}
-			mySetAttrs(setting);
-		});
-	});
 };
+
 
 // Helper function to grab player input 
 const getQuery = async (queryText) => {
@@ -255,7 +195,7 @@ on("change:channel change:command change:consort change:sway", function() {
 		if (v.consort > 0){resolve += 1};
 		if (v.sway > 0){resolve += 1};
 
-		setAttr("resolve", resolve);
+		setAttr("prowess", resolve);
 
 	});
 });
@@ -317,9 +257,9 @@ on("clicked:roll", (event) => {
 			var rollexpr = "";
 
 			if(numdice == 0){
-				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[[2d6kl1]]}} {{effectpoints=[[0]]}} {{iscrit=[[0]]}}";
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[[2d6kl1]]}} {{dice=[[0]]}} {{effectpoints=[[0]]}} {{iscrit=[[0]]}}";
 			} else {
-				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[["+numdice+"d6k1]]}} {{effectpoints=[[0]]}} {{iscrit=[[0]]}}";
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[["+numdice+"d6k1]]}} {{dice=[[0]]}} {{effectpoints=[[0]]}} {{iscrit=[[0]]}}";
 			}
 
 			console.log(rollexpr);
@@ -329,6 +269,7 @@ on("clicked:roll", (event) => {
 				var points = 0;
 				var crit = 0;
 				var sixes = 0;
+				var dicelist = "";
 
 				if (results.results.roll.result > 3){
 					points+=1;
@@ -338,6 +279,8 @@ on("clicked:roll", (event) => {
 				console.log("Dice: "+results.results.roll.dice);
 
 				results.results.roll.dice.forEach(die => {
+					dicelist = dicelist + die + " "
+
 					if(die == 6 && points > 0){
 						sixes +=1;
 					}
@@ -356,6 +299,7 @@ on("clicked:roll", (event) => {
 					{
 						effectpoints: points,
 						iscrit: crit,
+						dice: dicelist
 					}
 				);
 			});

@@ -13,7 +13,7 @@ rolltemplate.sheet-rolltemplate-scob
 			td(colspan=2) {{name}} rolled {{#stat_name}} {{stat_name}}{{/stat_name}}{{#roll_mod}}({{roll_mod}}){{/roll_mod}}
 		tr
 			| {{#rollGreater() roll 5}}
-			td.result.success {{roll}}
+			td.result.success {{computed::dice}}
 			| {{#rollGreater() computed::iscrit 0}}
 			td Crit!
 			| {{/rollGreater() computed::iscrit 0}}
@@ -23,15 +23,16 @@ rolltemplate.sheet-rolltemplate-scob
 			| {{/rollGreater() roll 5}}
 
 			| {{#rollBetween() roll 4 5}}
-			td.result {{roll}}
+			td.result {{computed::dice}}
 			td Mixed Success
 			| {{/rollBetween() roll 4 5}}
 
 			| {{#rollLess() roll 4}}
-			td.result.failure {{roll}}
+			td.result.failure {{computed::dice}}
 			td Miss
 			| {{/rollLess() roll 4}}
 		tr
 			td.result {{computed::effectpoints}}
 			td Effect Points
+
 	
