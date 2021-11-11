@@ -16,7 +16,7 @@
     //Left Column
     .col30.generalinfo
         .label.title(data-i18n='freebooter')
-        +text-input('freebooter_name', 'entername')
+        +text-input('character_name', 'entername')
         .label.title(data-i18n='alignment')
         +text-input('alignment', 'enteralignment')
         .label.title(data-i18n='relationships')
@@ -98,22 +98,52 @@
                 .sublabel(data-i18n='noactions')
         .trackholder.burnelim
             .trackholder
-                .beleft
+                .beleft.noborder
                     .label(data-i18n="burnout")
                 .burnelimcenter1
-                .beright
+                .beright.noborder
                     .label(data-i18n="eliminated")
             .trackholder
                 .beleft
-                    .label(data-i18n="vice")
+                    .sublabel(data-i18n="vice")
                     .hexboxcontainer
                         +checkbox('vice','hexbox')
                 .burnelimcenter2
                 .beright
                     .hexboxcontainer
                         +checkbox('dead','hexbox')
-                    .label(data-i18n="dead")
-                
+                    .sublabel(data-i18n="dead")
+            .trackholder
+                .beleft
+                    .sublabel(data-i18n="apathy")
+                    .hexboxcontainer
+                        +checkbox('apathy','hexbox')
+                .burnelimcenter3
+                .beright
+                    .hexboxcontainer
+                        +checkbox('lost','hexbox')
+                    .sublabel(data-i18n="lost")          
+            .trackholder
+                .beleft
+                    .sublabel(data-i18n="fatigue")
+                    .hexboxcontainer
+                        +checkbox('fatigue','hexbox')
+                .burnelimcenter4
+                .beright
+                    .hexboxcontainer
+                        +checkbox('forgotten','hexbox')
+                    .sublabel(data-i18n="forgotten")
+            .trackholder
+                .beleft
+                    .sublabel(data-i18n="isolation")
+                    .hexboxcontainer
+                        +checkbox('isolation','hexbox')
+                .burnelimcenter5
+                .beright
+                    .hexboxcontainer
+                        +checkbox('consumed','hexbox')
+                    .sublabel(data-i18n="consumed")
+
 
     //Right Column
     .col30.possessions.flex-wrap
@@ -131,14 +161,151 @@
 
             .title.label.purselabel(data-i18n="purse")
             .sixcheckbox
+                +6checkbox('purse','hexbox')
+                    .sixboxlabel P
 
 
         .col50
             .title.label(data-i18n='stash')
+            .sixcheckbox
+                +6checkbox('stash1','hexbox')
+                    .sixboxlabel 1
+            .sixcheckbox
+                +6checkbox('stash2','hexbox')
+                    .sixboxlabel 2
+            .sixcheckbox
+                +6checkbox('stash3','hexbox')
+                    .sixboxlabel 3
+
 
     .col33.culture
+        .playbook-selector
+            select(name='attr_culture')
+                optgroup
+                    option() #{translation["selectculture"]}
+                    each culture in cultures
+                        option(value=culture) #{translation[culture]}
+
+        +text-input('culture_drive')(data-i18n-placeholder='drive').drive
+        fieldset.repeating_cultureadvances
+            .advancecheckholder
+                +checkbox('advancecheck','advancecheck')
+            +text-input('culadvname')(data-i18n-placeholder='advance_name')
+            +textarea('culadvdescription')(data-i18n-placeholder='advance_description')
+
+        .xpholder
+            .label XP
+            +newcheckbox('insightxp', 'xpbox resetbox')(value=0, checked)
+            +newcheckbox('insightxp', 'xpbox')(value=1)
+            +newcheckbox('insightxp', 'xpbox')(value=2)
+            +newcheckbox('insightxp', 'xpbox')(value=3)
+            +newcheckbox('insightxp', 'xpbox')(value=4)
+            +newcheckbox('insightxp', 'xpbox')(value=5)
+            +newcheckbox('insightxp', 'xpbox')(value=6)
+
+        +roll('insight','insight')(data-i18n="insight").title.label
+        +hidden-input('insight')(value=0)
+        .statblockholder
+            .statholder
+                +4checkbox('study','statbox')
+                +roll('study','study')(data-i18n='study').label
+            .statholder
+                +4checkbox('survey','statbox')
+                +roll('survey','survey')(data-i18n='survey').label
+            .statholder
+                +4checkbox('reveal','statbox')
+                +roll('reveal','reveal')(data-i18n='reveal').label
+            .statholder
+                +4checkbox('tinker','statbox')
+                +roll('tinker','tinker')(data-i18n='tinker').label
+
+
+
     .col33.lineage
+        .playbook-selector
+            select(name='attr_lineage')
+                optgroup
+                    option() #{translation["selectlineage"]}
+                    each lineage in lineages
+                        option(value=lineage) #{translation[lineage]}
+
+        +text-input('lineage_drive')(data-i18n-placeholder='drive').drive
+        fieldset.repeating_lineageadvances
+            .advancecheckholder
+                +checkbox('advancecheck','advancecheck')
+            +text-input('linadvname')(data-i18n-placeholder='advance_name')
+            +textarea('linadvdescription')(data-i18n-placeholder='advance_description')
+
+        .xpholder
+            .label XP
+            +newcheckbox('prowessxp', 'xpbox resetbox')(value=0, checked)
+            +newcheckbox('prowessxp', 'xpbox')(value=1)
+            +newcheckbox('prowessxp', 'xpbox')(value=2)
+            +newcheckbox('prowessxp', 'xpbox')(value=3)
+            +newcheckbox('prowessxp', 'xpbox')(value=4)
+            +newcheckbox('prowessxp', 'xpbox')(value=5)
+            +newcheckbox('prowessxp', 'xpbox')(value=6)
+
+        +roll('prowess','prowess')(data-i18n="prowess").title.label
+        +hidden-input('prowess')(value=0)
+
+        .statblockholder
+            .statholder
+                +4checkbox('finesse','statbox')
+                +roll('finesse','finesse')(data-i18n='finesse').label
+            .statholder
+                +4checkbox('maneuver','statbox')
+                +roll('maneuver','maneuver')(data-i18n='maneuver').label
+            .statholder
+                +4checkbox('skirmish','statbox')
+                +roll('skirmish','skirmish')(data-i18n='skirmish').label
+            .statholder
+                +4checkbox('wreck','statbox')
+                +roll('wreck','wreck')(data-i18n='wreck').label
+
+
+
     .col33.devotion
+        .playbook-selector
+            select(name='attr_devotion')
+                optgroup
+                    option() #{translation["selectdevotion"]}
+                    each devotion in devotions
+                        option(value=devotion) #{translation[devotion]}
+
+        +text-input('devotion_drive')(data-i18n-placeholder='drive').drive
+        fieldset.repeating_devotionadvances
+            .advancecheckholder
+                +checkbox('advancecheck','advancecheck')
+            +text-input('devadvname')(data-i18n-placeholder='advance_name')
+            +textarea('devadvdescription')(data-i18n-placeholder='advance_description')
+
+        .xpholder
+            .label XP
+            +newcheckbox('resolvexp', 'xpbox resetbox')(value=0, checked)
+            +newcheckbox('resolvexp', 'xpbox')(value=1)
+            +newcheckbox('resolvexp', 'xpbox')(value=2)
+            +newcheckbox('resolvexp', 'xpbox')(value=3)
+            +newcheckbox('resolvexp', 'xpbox')(value=4)
+            +newcheckbox('resolvexp', 'xpbox')(value=5)
+            +newcheckbox('resolvexp', 'xpbox')(value=6)
+
+        +roll('resolve','resolve')(data-i18n="resolve").title.label
+        +hidden-input('resolve')(value=0)
+        .statblockholder
+            .statholder
+                +4checkbox('channel','statbox')
+                +roll('channel','channel')(data-i18n='channel').label
+            .statholder
+                +4checkbox('command','statbox')
+                +roll('command','command')(data-i18n='command').label
+            .statholder
+                +4checkbox('consort','statbox')
+                +roll('consort','consort')(data-i18n='consort').label
+            .statholder
+                +4checkbox('sway','statbox')
+                +roll('sway','sway')(data-i18n='sway').label
+
 
 .factionsheet.flex-wrap
     h1 Faction Sheet

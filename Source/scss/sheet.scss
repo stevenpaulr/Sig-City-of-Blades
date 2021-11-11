@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cardo:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cardo:ital,400;0,400;0,700;ital,700&display=swap');
 
 $urlbase: "https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main";
 
@@ -317,6 +317,7 @@ button[type=roll].label {
 }
 .sublabel {
 	color:$fontblack;
+	font-style: italic;
 }
 
 .uppercase {
@@ -354,12 +355,15 @@ textarea.smallcaps {
 	-1px 1px 0 #000,
 	 1px 1px 0 #000;
 
-	background-color: $headergrey;
+	background-color: $headergrey !important;
 	padding:3px 5px;
 	border-radius: 0;
+	border:none !important;
 } 
 
-
+button.title{
+	width: 100%;
+}
 
 
 
@@ -430,17 +434,13 @@ textarea.smallcaps {
 	text-align: right;
 }
 .centertrack{
-
-	.centertrackrow{
-		display:flex;
-		width:84px;	
-	}
-
-
-	
-	$xpboxwidth:30px;
+	$xpboxwidth:20px;
 	$xpboxpadding:1px;
 	
+	.centertrackrow{
+		display:flex;
+		width:$xpboxwidth*2 + $xpboxpadding*4 + 20;	
+	}
 	.hexboxcontainer{
 		background-color: $headergrey;
 		width:$xpboxwidth+2*$xpboxpadding;
@@ -472,17 +472,16 @@ textarea.smallcaps {
 }
 
 .burnelim{
-	height: 200px;
 	width: 100%;
 
 	position: relative;
 	flex-wrap: wrap;
 
 	.burnelimcenter1{ width:200px}
-	.burnelimcenter2{ width:100px}
-	.burnelimcenter3{ width:100px}
-	.burnelimcenter4{ width:100px}
-	.burnelimcenter5{ width:100px}
+	.burnelimcenter2{ width:230px}
+	.burnelimcenter3{ width:180px}
+	.burnelimcenter4{ width:130px}
+	.burnelimcenter5{ width:80px}
 
 	.beleft,
 	.beright{
@@ -490,13 +489,25 @@ textarea.smallcaps {
 		flex-grow:1;
 		flex-shrink: 1;
 		flex-basis: 50%;
-		margin-top:10px
+		margin-top:10px;
+
+		border: 3px solid;
+		border-image-slice: 1;
+		border-width: 2px 0;
+		border-image-source: linear-gradient(to right,  rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
 	}
 	.beleft{
 		justify-content: right;
+		border-image-source: linear-gradient(to left,  rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
 	}
 
-	$xpboxwidth:30px;
+	.noborder{
+		border: none;
+	}
+
+	$xpboxwidth:20px;
 	$xpboxpadding:1px;
 	
 	.hexboxcontainer{
@@ -518,10 +529,10 @@ textarea.smallcaps {
 	}
 
 	.hexbox + span {
-		background-image: url($urlbase+"/Images/hex-v-unchecked.svg");
+		background-image: url($urlbase+"/Images/dia-unchecked.svg");
 	}
 	.hexbox:checked + span {
-		background-image: url($urlbase+"/Images/hex-v-checked.svg");
+		background-image: url($urlbase+"/Images/dia-checked.svg");
 	}
 	.hexbox:hover + span {
 		opacity: 0.7;
@@ -572,7 +583,9 @@ textarea.smallcaps {
 	}
 
 	.hexboxcontainer{
-//		background-color: $headergrey;
+		background-image: linear-gradient(90deg, #fff 30%, $headergrey 30%, $headergrey 70%, #fff 67%);
+		background-size: 100% 100%;
+	
 		width:$xpboxcontainerwidth+2*$xpboxpadding;
 		padding-left: $xpboxpadding;
 		padding-right: $xpboxpadding;
@@ -599,25 +612,78 @@ textarea.smallcaps {
 	.hexbox:hover + span {
 		opacity: 0.7;
 	}
+}
 
-	.sixcheckbox{
-		$xpboxwidth:60px;
-		$xpboxcontainerwidth: 60px;
-		$xpboxmargin:1.5*$xpboxwidth - 0.5*$xpboxcontainerwidth;
-		$xpboxpadding:0;
-		
-		width:$xpboxcontainerwidth+2*$xpboxpadding;
-		padding-left: $xpboxpadding;
-		padding-right: $xpboxpadding;
-		margin-left: auto;
-		margin-right: auto;
+.sixcheckbox{
 
+	background-image: linear-gradient(90deg, #fff 30%, $headergrey 30%, $headergrey 70%, #fff 67%);
+	background-size: 100% 100%;
+
+	$xpboxwidth:30px;
+	$xpboxpadding:0;
+	
+	$width:2.5*$xpboxwidth;
+	width:$width;
+	height: 1.1*$width;
+	margin-left: auto;
+	margin-right: auto;
+
+	position: relative;
 	/* CHECKBOXES */
+
 	.hexbox {
-		margin-right: -$xpboxmargin;
+		position:absolute !important;
+		margin-right: -$xpboxwidth;
 	}
+	.hexbox1{
+		top:0;
+		left:$width/2 - $xpboxwidth/2;
+	}
+	.hexbox2{
+		top:0.4330*$xpboxwidth;
+		left:0;
+	}
+	.hexbox3{
+		top:0.4330*$xpboxwidth;
+		left:1.5*$xpboxwidth;
+	}
+	.hexbox4{
+		top:1.299*$xpboxwidth;
+		left:0;
+	}
+	.hexbox5{
+		top:1.299*$xpboxwidth;
+		left:1.5*$xpboxwidth;
+	}
+	.hexbox6{
+		left:$width/2 - $xpboxwidth/2;
+		top:1.732*$xpboxwidth;
+	}
+
+	.underlay{
+		position: absolute;
+		height: $xpboxwidth * 0.8660;
+		width: $xpboxwidth;
+		left:$width/2 - $xpboxwidth/2;
+		top:0.866*$xpboxwidth;
+		background-image: url($urlbase+"/Images/hex-h-checked.svg");
+
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	  
+	}
+
+	.sixboxlabel{
+		color:$headergrey;
+		text-align: center;
+		font-size: 1.2em;
+		line-height: $xpboxwidth * 0.8660 + 2;
+	}
+
+
 	input.hexbox, .hexbox + span {
-		height: $xpboxwidth;
+		height: $xpboxwidth * 0.8660;
 		width: $xpboxwidth;
 		flex: 0 0 auto;
 	}
@@ -632,6 +698,244 @@ textarea.smallcaps {
 		opacity: 0.7;
 	}
 
+}
+
+.culture,
+.lineage,
+.devotion{
+	margin:20px 0 0;
+	padding: 0px 5px;
+
+	.playbook-selector {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		select {
+			font-size: 16px;
+			width:100%;
+			height:34px;
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 1px;
+			color: black;
+			-webkit-text-fill-color: white;
+			text-shadow:
+			2px 2px 0 #000,
+			-1px -1px 0 #000,  
+			1px -1px 0 #000,
+			-1px 1px 0 #000,
+			 1px 1px 0 #000;
+		
+			background-color: $headergrey;
+			padding:3px 5px;
+			border-radius: 0;
+		}
+	
+
+	}
+	.repitem{
+
+		display:flex;
+		flex-wrap: wrap;
+
+		$boxwidth:20px;
+							
+		.advancecheckholder{
+			width: $boxwidth;
+		}
+		/* CHECKBOXES */
+		.advancecheck {
+			margin-right: -$boxwidth;
+		}
+		input.advancecheck, .advancecheck + span {
+			height: $boxwidth;
+			width: $boxwidth;
+			flex: 0 0 auto;
+		}
+	
+		.advancecheck + span {
+			background-image: url($urlbase+"/Images/dia-unchecked.svg");
+		}
+		.advancecheck:checked + span {
+			background-image: url($urlbase+"/Images/dia-checked.svg");
+		}
+		.advancecheck:hover + span {
+			opacity: 0.7;
+		}
+
+		input[type=text]{
+			text-align: left;
+			width: 90%;
+			height: $boxwidth;
+			font-weight: 700;
+			margin: 0 0 0 5px;
+		}
+	
+	}
+
+	input[type=text]{
+		border: none;
+		font-size: 16px;
+		outline:none;
+		text-align: center;	
+	}
+
+	input[type=text].drive{
+		font-style: italic;
+	}
+
+
+
+	textarea{
+		width: 100%;
+		height: 110px;
+		outline: none;
+		border:none;
+		font-weight: 300;
+	}
+}
+
+
+
+
+.xpholder{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-style: solid;
+	border-width: 2px 0 0;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to left, rgba(0, 0, 0, 0),  rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  
+
+	$xpboxwidth:20px;
+	$xpboxpadding:1px;
+	
+	width:100%;
+	padding-left: $xpboxpadding;
+	padding-right: $xpboxpadding;
+
+	margin-left: 5px;
+	margin-right: 5px;
+	
+	.resetbox,
+	.resetbox + span{
+		display: none !important;
+	}
+
+	/* CHECKBOXES */
+	.xpbox {
+		margin-right: -$xpboxwidth;
+		z-index: 1;
+	}
+	input.xpbox, .xpbox + span {
+		height: $xpboxwidth;
+		width: $xpboxwidth;
+		flex: 0 0 auto;
+		position: relative !important;
+
+	}
+
+	.xpbox:hover + span {
+		opacity: 0.7;
+	}
+	.xpbox + span {
+		background-image: url($urlbase+"/Images/hex-v-checked.svg");
+	}
+	.xpbox:checked + span {
+		background-image: url($urlbase+"/Images/hex-v-checked.svg");
+	}
+	.xpbox:checked ~ .xpbox + span{
+		background-image: url($urlbase+"/Images/hex-v-unchecked.svg");
 	}
 
 }
+
+.statblockholder{
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+
+	$boxwidth:20px;
+
+	.statholder{
+		position: relative;
+		width: $boxwidth * 2;
+	}
+							
+	/* CHECKBOXES */
+	.statbox {
+		position:absolute !important;
+		margin-right: -$boxwidth;
+	}
+
+	.statbox0{
+		display: none !important;
+	}
+
+	.statbox1{
+		top:0;
+		left:$boxwidth/2;
+	}
+	.statbox2{
+		top:$boxwidth/2;
+		left:0;
+	}
+	.statbox3{
+		top:$boxwidth/2;
+		left:$boxwidth;
+	}	
+	.statbox4{
+		top:$boxwidth;
+		left:$boxwidth/2;
+	}
+	.statbox + span {
+		height: $boxwidth;
+		width: $boxwidth;
+		flex: 0 0 auto;
+	}
+
+	input.statbox {
+		margin:$boxwidth/4;
+		height: $boxwidth/2;
+		width: $boxwidth/2;
+		flex: 0 0 auto;
+	}
+
+	.statbox + span {
+		background-image: url($urlbase+"/Images/dia-checked.svg");
+	}
+	.statbox:checked + span {
+		background-image: url($urlbase+"/Images/dia-checked.svg");
+	}
+
+	.statbox:checked ~ .statbox + span{
+		background-image: url($urlbase+"/Images/dia-unchecked.svg");
+	}
+
+	.statbox:hover + span {
+		opacity: 0.7;
+	}
+
+	.label{
+		position: absolute;
+		top:$boxwidth*2;
+		left:0;
+		width: 100%;
+		text-align: center;
+		font-weight: 400 !important;
+		font-size: 14px !important;
+		display: flex;
+		justify-content: center;
+		border:0;	
+		margin:0 !important;
+		padding:0 !important;
+	
+	}
+
+}
+
+

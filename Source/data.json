@@ -1,11 +1,338 @@
 {
 	"cultures":{
-
+		"truthbearer":{
+			"drive":"truthdrive",
+			"study":0,
+			"survey":0,
+			"reveal":2,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"windborne", "culadvdescription":"windbornedesc"},
+				{"culadvname":"untouchable", "culadvdescription":"untouchabledesc"}
+			]
+		},
+		"keeper":{
+			"drive":"keeperdrive",
+			"study":2,
+			"survey":0,
+			"reveal":0,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"forgottenrites", "culadvdescription":"forgottenritesdesc"},
+				{"culadvname":"willofthecrystal", "culadvdescription":"willofthecrystaldesc"}
+			]
+		},
+		"kinbound":{
+			"drive":"kinbounddrive",
+			"study":0,
+			"survey":1,
+			"reveal":1,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"familyties", "culadvdescription":"familytiesdesc"},
+				{"culadvname":"trustinme", "culadvdescription":"trustinmedesc"}
+			]
+		},
+		"anarch":{
+			"drive":"anarchdrive",
+			"study":0,
+			"survey":1,
+			"reveal":0,
+			"tinker":1,
+			"advances":[
+				{"culadvname":"blackblock", "culadvdescription":"blackblockdesc"},
+				{"culadvname":"communityorganizer", "culadvdescription":"communityorganizerdesc"}
+			]
+		},
+		"scoundrel":{
+			"drive":"scoundreldrive",
+			"study":0,
+			"survey":2,
+			"reveal":0,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"pokerface", "culadvdescription":"pokerfacedesc"},
+				{"culadvname":"friendsinlow", "culadvdescription":"friendsinlowdesc"}
+			]
+		},
+		"fireheart":{
+			"drive":"fireheartdrive",
+			"study":0,
+			"survey":0,
+			"reveal":1,
+			"tinker":1,
+			"advances":[
+				{"culadvname":"burninghands", "culadvdescription":"burninghandsdesc"},
+				{"culadvname":"endlesspassion", "culadvdescription":"endlesspassiondesc"}
+			]
+		},
+		"caretaker":{
+			"drive":"caretakerdrive",
+			"study":1,
+			"survey":0,
+			"reveal":0,
+			"tinker":1,
+			"advances":[
+				{"culadvname":"healerofbodies", "culadvdescription":"healerofbodiesdesc"},
+				{"culadvname":"leaderofhearts", "culadvdescription":"leaderofheartsdesc"}
+			]
+		},
+		"innovator":{
+			"drive":"innovatordrive",
+			"study":0,
+			"survey":0,
+			"reveal":0,
+			"tinker":2,
+			"advances":[
+				{"culadvname":"alchemicaldistiller", "culadvdescription":"alchemicaldistillerdesc"},
+				{"culadvname":"demolisher", "culadvdescription":"demolisherdesc"}
+			]
+		},
+		"courtier":{
+			"drive":"courtierdrive",
+			"study":1,
+			"survey":1,
+			"reveal":0,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"courtspy", "culadvdescription":"courtspydesc"},
+				{"culadvname":"harmlesshedonist", "culadvdescription":"harmlesshedonistdesc"}
+			]
+		},		
+		"caskclad":{
+			"drive":"caskcladdrive",
+			"study":1,
+			"survey":0,
+			"reveal":1,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"loyalpatron", "culadvdescription":"loyalpatrondesc"},
+				{"culadvname":"drunkenwarrior", "culadvdescription":"drunkenwarriordesc"}
+			]
+		}
 	},
 	"lineages":{
-
+		"devahil":{
+			"drive":"devahildrive",
+			"finesse":0,
+			"maneuver":1,
+			"skirmish":1,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"memoryfog", "linadvdescription":"memoryfogdesc"},
+				{"linadvname":"likelookingmirror", "linadvdescription":"likelookingmirrordesc"}
+			]
+		},
+		"aesigilar":{
+			"drive":"aesigilardrive",
+			"finesse":1,
+			"maneuver":1,
+			"skirmish":0,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"hostswap", "linadvdescription":"hostswapdesc"},
+				{"linadvname":"patternsoffate", "linadvdescription":"patternsoffatedesc"}
+			]
+		},
+		"revenant":{
+			"drive":"revenantdrive",
+			"finesse":0,
+			"maneuver":0,
+			"skirmish":2,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"speakerforthedead", "linadvdescription":"speakerforthedeaddesc"},
+				{"linadvname":"thatwhichisdead", "linadvdescription":"thatwhichisdeaddesc"}
+			]
+		},
+		"gnomish":{
+			"drive":"gnomishdrive",
+			"finesse":2,
+			"maneuver":0,
+			"skirmish":0,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"phantasmalraiment", "linadvdescription":"phantasmalraimentdesc"},
+				{"linadvname":"artificer", "linadvdescription":"artificerdesc"}
+			]
+		},
+		"giant":{
+			"drive":"giantdrive",
+			"finesse":0,
+			"maneuver":0,
+			"skirmish":0,
+			"wreck":2,
+			"advances":[
+				{"linadvname":"childofatlas", "linadvdescription":"childofatlasdesc"},
+				{"linadvname":"unstoppablemight", "linadvdescription":"unstoppablemightdesc"}
+			]
+		},
+		"wyrm":{
+			"drive":"wyrmdrive",
+			"finesse":0,
+			"maneuver":0,
+			"skirmish":1,
+			"wreck":1,
+			"advances":[
+				{"linadvname":"scalesofbattle", "linadvdescription":"scalesofbattledesc"},
+				{"linadvname":"auraofmenace", "linadvdescription":"auraofmenacedesc"}
+			]
+		},
+		"polari":{
+			"drive":"polaridrive",
+			"finesse":1,
+			"maneuver":0,
+			"skirmish":1,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"starlightsword", "linadvdescription":"starlightsworddesc"},
+				{"linadvname":"zealousreflexes", "linadvdescription":"zealousreflexesdesc"}
+			]
+		},
+		"ancestral":{
+			"drive":"ancestraldrive",
+			"finesse":0,
+			"maneuver":1,
+			"skirmish":1,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"cladinlightning", "linadvdescription":"cladinlightningdesc"},
+				{"linadvname":"guardianoath", "linadvdescription":"guardianoathdesc"}
+			]
+		},
+		"sylvan":{
+			"drive":"sylvandrive",
+			"finesse":0,
+			"maneuver":1,
+			"skirmish":0,
+			"wreck":1,
+			"advances":[
+				{"linadvname":"verdantregeneration", "linadvdescription":"verdantregenerationdesc"},
+				{"linadvname":"familytree", "linadvdescription":"familytreedesc"}
+			]
+		},
+		"waterborn":{
+			"drive":"waterborndrive",
+			"finesse":0,
+			"maneuver":2,
+			"skirmish":0,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"waterbender", "linadvdescription":"waterbenderdesc"},
+				{"linadvname":"purewaters", "linadvdescription":"purewatersdesc"}
+			]
+		}
 	},
-	"devotions:":{
-
+	"devotions":{
+		"ferrelux":{
+			"drive":"ferreluxdrive",
+			"channel":0,
+			"command":0,
+			"consort":1,
+			"sway":1,
+			"advances":[
+				{"devadvname":"rumourmonger", "devadvdescription":"rumourmongerdesc"},
+				{"devadvname":"rebelseye", "devadvdescription":"rebelseyedesc"}
+			]
+		},
+		"magdak":{
+			"drive":"magdakdrive",
+			"channel":1,
+			"command":1,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"sleeplessservant", "devadvdescription":"sleeplessservantdesc"},
+				{"devadvname":"patternsight", "devadvdescription":"patternsightdesc"}
+			]
+		},
+		"aludra":{
+			"drive":"aludradrive",
+			"channel":1,
+			"command":0,
+			"consort":0,
+			"sway":1,
+			"advances":[
+				{"devadvname":"eternaltears", "devadvdescription":"eternaltearsdesc"},
+				{"devadvname":"memorypalace", "devadvdescription":"memorypalacedesc"}
+			]
+		},
+		"kestranna":{
+			"drive":"kestrannadrive",
+			"channel":0,
+			"command":1,
+			"consort":1,
+			"sway":0,
+			"advances":[
+				{"devadvname":"kestrsbounty", "devadvdescription":"kestrsbountydesc"},
+				{"devadvname":"rannasharvest", "devadvdescription":"rannasharvestdesc"}
+			]
+		},
+		"nyx":{
+			"drive":"nyxdrive",
+			"channel":1,
+			"command":0,
+			"consort":0,
+			"sway":1,
+			"advances":[
+				{"devadvname":"deeplistener", "devadvdescription":"deeplistenerdesc"},
+				{"devadvname":"dreamwalker", "devadvdescription":"dreamwalkerdesc"}
+			]
+		},
+		"morkanah":{
+			"drive":"morkanahdrive",
+			"channel":1,
+			"command":1,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"morkanahslove", "devadvdescription":"morkanahslovedesc"},
+				{"devadvname":"shelteringstone", "devadvdescription":"shelteringstonedesc"}
+			]
+		},
+		"eaterofworlds":{
+			"drive":"eaterofworldsdrive",
+			"channel":0,
+			"command":2,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"fathershunger", "devadvdescription":"fathershungerdesc"},
+				{"devadvname":"saboteur", "devadvdescription":"saboteurdesc"}
+			]
+		},
+		"omalaub":{
+			"drive":"omalaubdrive",
+			"channel":2,
+			"command":0,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"thespectralcloak", "devadvdescription":"thespectralcloakdesc"},
+				{"devadvname":"numbblessing", "devadvdescription":"numbblessingdesc"}
+			]
+		},
+		"brossien":{
+			"drive":"brossiendrive",
+			"channel":0,
+			"command":0,
+			"consort":2,
+			"sway":0,
+			"advances":[
+				{"devadvname":"heartsong", "devadvdescription":"heartsongdesc"},
+				{"devadvname":"bardicmagics", "devadvdescription":"bardicmagicsdesc"}
+			]
+		},
+		"calla":{
+			"drive":"calladrive",
+			"channel":0,
+			"command":0,
+			"consort":0,
+			"sway":2,
+			"advances":[
+				{"devadvname":"giftofgullibility", "devadvdescription":"giftofgullibilitydesc"},
+				{"devadvname":"masterchaos", "devadvdescription":"masterchaosdesc"}
+			]
+		}
 	}
 }

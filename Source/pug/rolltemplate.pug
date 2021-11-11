@@ -5,23 +5,33 @@
 //stat_name is the name of the stat added to the roll
 //result is the die roll
 
-rolltemplate.sheet-rolltemplate-mp
+rolltemplate.sheet-rolltemplate-scob
 	table
 		tr
 			th(colspan=2) {{roll_name}}
 		tr  
 			td(colspan=2) {{name}} rolled {{#stat_name}} {{stat_name}}{{/stat_name}}{{#roll_mod}}({{roll_mod}}){{/roll_mod}}
 		tr
-			| {{#rollGreater() result 9}}
-			td.result.success {{result}}
+			| {{#rollGreater() roll 5}}
+			td.result.success {{roll}}
+			| {{#rollGreater() computed::iscrit 0}}
+			td Crit!
+			| {{/rollGreater() computed::iscrit 0}}
+			| {{#rollLess() computed::iscrit 1}}
 			td Success!
-			| {{/rollGreater() result 9}}
-			| {{#rollBetween() result 7 9}}
-			td.result {{result}}
-			td Partial Success
-			| {{/rollBetween() result 7 9}}
-			| {{#rollLess() result 7}}
-			td.result.failure {{result}}
+			| {{/rollLess() computed::iscrit 1}}
+			| {{/rollGreater() roll 5}}
+
+			| {{#rollBetween() roll 4 5}}
+			td.result {{roll}}
+			td Mixed Success
+			| {{/rollBetween() roll 4 5}}
+
+			| {{#rollLess() roll 4}}
+			td.result.failure {{roll}}
 			td Miss
-			| {{/rollLess() result 7}}
+			| {{/rollLess() roll 4}}
+		tr
+			td.result {{computed::effectpoints}}
+			td Effect Points
 	

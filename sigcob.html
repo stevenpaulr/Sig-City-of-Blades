@@ -1,5 +1,3 @@
-<!--	const translation = locals.translation, -->
-<!--		playbooks = Object.keys(locals.data.playbooks);-->
 <div class="sheet-wrapper">
   <input class="sheettype" type="hidden" name="attr_sheettype" value="0"/>
   <div class="type-selector flex-wrap">
@@ -20,7 +18,7 @@
     <!--Left Column-->
     <div class="col30 generalinfo">
       <div class="label title" data-i18n="freebooter"></div>
-      <input type="text" spellcheck="false" name="attr_freebooter_name" placeholder="Enter your Name and Title"/>
+      <input type="text" spellcheck="false" name="attr_character_name" placeholder="Enter your Name and Title"/>
       <div class="label title" data-i18n="alignment"></div>
       <input type="text" spellcheck="false" name="attr_alignment" placeholder="Enter your Alignment"/>
       <div class="label title" data-i18n="relationships"></div>
@@ -42,18 +40,18 @@
         <div class="centertrack">
           <div class="centertrackrow">
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress1" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_stress1"/><span class="hexbox"></span>
             </div>
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm1" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_harm1"/><span class="hexbox"></span>
             </div>
           </div>
           <div class="centertrackrow">
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress2" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_stress2"/><span class="hexbox"></span>
             </div>
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm2" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_harm2"/><span class="hexbox"></span>
             </div>
           </div>
         </div>
@@ -71,26 +69,26 @@
         <div class="centertrack">
           <div class="centertrackrow">
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress3" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_stress3"/><span class="hexbox"></span>
             </div>
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm3" value="1"/><span class="hexbox"></span>
-            </div>
-          </div>
-          <div class="centertrackrow">
-            <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress4" value="1"/><span class="hexbox"></span>
-            </div>
-            <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm4" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_harm3"/><span class="hexbox"></span>
             </div>
           </div>
           <div class="centertrackrow">
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress5" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_stress4"/><span class="hexbox"></span>
             </div>
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm5" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_harm4"/><span class="hexbox"></span>
+            </div>
+          </div>
+          <div class="centertrackrow">
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_stress5"/><span class="hexbox"></span>
+            </div>
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_harm5"/><span class="hexbox"></span>
             </div>
           </div>
         </div>
@@ -108,26 +106,26 @@
         <div class="centertrack">
           <div class="centertrackrow">
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress6" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_stress6"/><span class="hexbox"></span>
             </div>
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm6" value="1"/><span class="hexbox"></span>
-            </div>
-          </div>
-          <div class="centertrackrow">
-            <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress7" value="1"/><span class="hexbox"></span>
-            </div>
-            <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm7" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_harm6"/><span class="hexbox"></span>
             </div>
           </div>
           <div class="centertrackrow">
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_stress8" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_stress7"/><span class="hexbox"></span>
             </div>
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_harm8" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_harm7"/><span class="hexbox"></span>
+            </div>
+          </div>
+          <div class="centertrackrow">
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_stress8"/><span class="hexbox"></span>
+            </div>
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_harm8"/><span class="hexbox"></span>
             </div>
           </div>
         </div>
@@ -138,27 +136,72 @@
       </div>
       <div class="trackholder burnelim">
         <div class="trackholder">
-          <div class="beleft">
+          <div class="beleft noborder">
             <div class="label" data-i18n="burnout"></div>
           </div>
           <div class="burnelimcenter1"></div>
-          <div class="beright">
+          <div class="beright noborder">
             <div class="label" data-i18n="eliminated"></div>
           </div>
         </div>
         <div class="trackholder">
           <div class="beleft">
-            <div class="label" data-i18n="vice"></div>
+            <div class="sublabel" data-i18n="vice"></div>
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_vice" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_vice"/><span class="hexbox"></span>
             </div>
           </div>
           <div class="burnelimcenter2"></div>
           <div class="beright">
             <div class="hexboxcontainer">
-              <input class="hexbox" type="checkbox" name="attr_dead" value="1"/><span class="hexbox"></span>
+              <input class="hexbox" type="checkbox" name="attr_dead"/><span class="hexbox"></span>
             </div>
-            <div class="label" data-i18n="dead"></div>
+            <div class="sublabel" data-i18n="dead"></div>
+          </div>
+        </div>
+        <div class="trackholder">
+          <div class="beleft">
+            <div class="sublabel" data-i18n="apathy"></div>
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_apathy"/><span class="hexbox"></span>
+            </div>
+          </div>
+          <div class="burnelimcenter3"></div>
+          <div class="beright">
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_lost"/><span class="hexbox"></span>
+            </div>
+            <div class="sublabel" data-i18n="lost">         </div>
+          </div>
+        </div>
+        <div class="trackholder">
+          <div class="beleft">
+            <div class="sublabel" data-i18n="fatigue"></div>
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_fatigue"/><span class="hexbox"></span>
+            </div>
+          </div>
+          <div class="burnelimcenter4"></div>
+          <div class="beright">
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_forgotten"/><span class="hexbox"></span>
+            </div>
+            <div class="sublabel" data-i18n="forgotten"></div>
+          </div>
+        </div>
+        <div class="trackholder">
+          <div class="beleft">
+            <div class="sublabel" data-i18n="isolation"></div>
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_isolation"/><span class="hexbox"></span>
+            </div>
+          </div>
+          <div class="burnelimcenter5"></div>
+          <div class="beright">
+            <div class="hexboxcontainer">
+              <input class="hexbox" type="checkbox" name="attr_consumed"/><span class="hexbox"></span>
+            </div>
+            <div class="sublabel" data-i18n="consumed"></div>
           </div>
         </div>
       </div>
@@ -168,27 +211,286 @@
       <div class="col50">
         <div class="title label" data-i18n="loadout"></div>
         <div class="hexboxcontainer">
-          <input class="hexbox" type="checkbox" name="attr_lightloadout" value="1"/><span class="hexbox">
+          <input class="hexbox" type="checkbox" name="attr_lightloadout"/><span class="hexbox">
             <div class="loadoutlabel" data-i18n="light"></div></span>
         </div>
         <div class="hexboxcontainer">
-          <input class="hexbox" type="checkbox" name="attr_mediumloadout" value="1"/><span class="hexbox">
+          <input class="hexbox" type="checkbox" name="attr_mediumloadout"/><span class="hexbox">
             <div class="loadoutlabel" data-i18n="medium"></div></span>
         </div>
         <div class="hexboxcontainer">
-          <input class="hexbox" type="checkbox" name="attr_heavyloadout" value="1"/><span class="hexbox">
+          <input class="hexbox" type="checkbox" name="attr_heavyloadout"/><span class="hexbox">
             <div class="loadoutlabel" data-i18n="heavy"></div></span>
         </div>
         <div class="title label purselabel" data-i18n="purse"></div>
-        <div class="sixcheckbox"></div>
+        <div class="sixcheckbox">
+          <input class="hexbox1 hexbox" type="checkbox" name="attr_purse1"/><span class="hexbox1 hexbox"></span>
+          <input class="hexbox2 hexbox" type="checkbox" name="attr_purse2"/><span class="hexbox2 hexbox"></span>
+          <input class="hexbox3 hexbox" type="checkbox" name="attr_purse3"/><span class="hexbox3 hexbox"></span>
+          <input class="hexbox4 hexbox" type="checkbox" name="attr_purse4"/><span class="hexbox4 hexbox"></span>
+          <input class="hexbox5 hexbox" type="checkbox" name="attr_purse5"/><span class="hexbox5 hexbox"></span>
+          <input class="hexbox6 hexbox" type="checkbox" name="attr_purse6"/><span class="hexbox6 hexbox"></span>
+          <div class="underlay">
+            <div class="sixboxlabel">P</div>
+          </div>
+        </div>
       </div>
       <div class="col50">
         <div class="title label" data-i18n="stash"></div>
+        <div class="sixcheckbox">
+          <input class="hexbox1 hexbox" type="checkbox" name="attr_stash11"/><span class="hexbox1 hexbox"></span>
+          <input class="hexbox2 hexbox" type="checkbox" name="attr_stash12"/><span class="hexbox2 hexbox"></span>
+          <input class="hexbox3 hexbox" type="checkbox" name="attr_stash13"/><span class="hexbox3 hexbox"></span>
+          <input class="hexbox4 hexbox" type="checkbox" name="attr_stash14"/><span class="hexbox4 hexbox"></span>
+          <input class="hexbox5 hexbox" type="checkbox" name="attr_stash15"/><span class="hexbox5 hexbox"></span>
+          <input class="hexbox6 hexbox" type="checkbox" name="attr_stash16"/><span class="hexbox6 hexbox"></span>
+          <div class="underlay">
+            <div class="sixboxlabel">1</div>
+          </div>
+        </div>
+        <div class="sixcheckbox">
+          <input class="hexbox1 hexbox" type="checkbox" name="attr_stash21"/><span class="hexbox1 hexbox"></span>
+          <input class="hexbox2 hexbox" type="checkbox" name="attr_stash22"/><span class="hexbox2 hexbox"></span>
+          <input class="hexbox3 hexbox" type="checkbox" name="attr_stash23"/><span class="hexbox3 hexbox"></span>
+          <input class="hexbox4 hexbox" type="checkbox" name="attr_stash24"/><span class="hexbox4 hexbox"></span>
+          <input class="hexbox5 hexbox" type="checkbox" name="attr_stash25"/><span class="hexbox5 hexbox"></span>
+          <input class="hexbox6 hexbox" type="checkbox" name="attr_stash26"/><span class="hexbox6 hexbox"></span>
+          <div class="underlay">
+            <div class="sixboxlabel">2</div>
+          </div>
+        </div>
+        <div class="sixcheckbox">
+          <input class="hexbox1 hexbox" type="checkbox" name="attr_stash31"/><span class="hexbox1 hexbox"></span>
+          <input class="hexbox2 hexbox" type="checkbox" name="attr_stash32"/><span class="hexbox2 hexbox"></span>
+          <input class="hexbox3 hexbox" type="checkbox" name="attr_stash33"/><span class="hexbox3 hexbox"></span>
+          <input class="hexbox4 hexbox" type="checkbox" name="attr_stash34"/><span class="hexbox4 hexbox"></span>
+          <input class="hexbox5 hexbox" type="checkbox" name="attr_stash35"/><span class="hexbox5 hexbox"></span>
+          <input class="hexbox6 hexbox" type="checkbox" name="attr_stash36"/><span class="hexbox6 hexbox"></span>
+          <div class="underlay">
+            <div class="sixboxlabel">3</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col33 culture"></div>
-    <div class="col33 lineage"></div>
-    <div class="col33 devotion"></div>
+    <div class="col33 culture">
+      <div class="playbook-selector">
+        <select name="attr_culture">
+          <optgroup>
+            <option>Select a Culture</option>
+            <option value="truthbearer">Truthbearer Culture</option>
+            <option value="keeper">Keeper Culture</option>
+            <option value="kinbound">Kinbound Culture</option>
+            <option value="anarch">Anarch Culture</option>
+            <option value="scoundrel">Scoundrel Culture</option>
+            <option value="fireheart">Fireheart Culture</option>
+            <option value="caretaker">Caretaker Culture</option>
+            <option value="innovator">Innovator Culture</option>
+            <option value="courtier">Courtier Culture</option>
+            <option value="caskclad">Caskclad Culture</option>
+          </optgroup>
+        </select>
+      </div>
+      <input class="drive" type="text" spellcheck="false" name="attr_culture_drive" data-i18n-placeholder="drive"/>
+      <fieldset class="repeating_cultureadvances">
+        <div class="advancecheckholder">
+          <input class="advancecheck" type="checkbox" name="attr_advancecheck"/><span class="advancecheck"></span>
+        </div>
+        <input type="text" spellcheck="false" name="attr_culadvname" data-i18n-placeholder="advance_name"/>
+        <textarea spellcheck="false" name="attr_culadvdescription" data-i18n-placeholder="advance_description"></textarea>
+      </fieldset>
+      <div class="xpholder">
+        <div class="label">XP</div>
+        <input class="xpbox resetbox" type="checkbox" name="attr_insightxp" value="0" checked="checked"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_insightxp" value="1"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_insightxp" value="2"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_insightxp" value="3"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_insightxp" value="4"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_insightxp" value="5"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_insightxp" value="6"/><span></span>
+      </div>
+      <button class="title label" type="action" name="act_roll" title="insight" value="insight" data-i18n="insight"></button>
+      <input type="hidden" name="attr_insight" value="0"/>
+      <div class="statblockholder">
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_study" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_study" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_study" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_study" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_study" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="study" value="study" data-i18n="study"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_survey" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_survey" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_survey" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_survey" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_survey" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="survey" value="survey" data-i18n="survey"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_reveal" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_reveal" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_reveal" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_reveal" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_reveal" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="reveal" value="reveal" data-i18n="reveal"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_tinker" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_tinker" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_tinker" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_tinker" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_tinker" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="tinker" value="tinker" data-i18n="tinker"></button>
+        </div>
+      </div>
+    </div>
+    <div class="col33 lineage">
+      <div class="playbook-selector">
+        <select name="attr_lineage">
+          <optgroup>
+            <option>Select a Lineage</option>
+            <option value="devahil">Devahil Lineage</option>
+            <option value="aesigilar">Aesigilar Lineage</option>
+            <option value="revenant">Revenant Lineage</option>
+            <option value="gnomish">Gnomish Lineage</option>
+            <option value="giant">Giant Lineage</option>
+            <option value="wyrm">Wyrm Lineage</option>
+            <option value="polari">Polari Lineage</option>
+            <option value="ancestral">Ancestral Lineage</option>
+            <option value="sylvan">Sylvan Lineage</option>
+            <option value="waterborn">Waterborn Lineage</option>
+          </optgroup>
+        </select>
+      </div>
+      <input class="drive" type="text" spellcheck="false" name="attr_lineage_drive" data-i18n-placeholder="drive"/>
+      <fieldset class="repeating_lineageadvances">
+        <div class="advancecheckholder">
+          <input class="advancecheck" type="checkbox" name="attr_advancecheck"/><span class="advancecheck"></span>
+        </div>
+        <input type="text" spellcheck="false" name="attr_linadvname" data-i18n-placeholder="advance_name"/>
+        <textarea spellcheck="false" name="attr_linadvdescription" data-i18n-placeholder="advance_description"></textarea>
+      </fieldset>
+      <div class="xpholder">
+        <div class="label">XP</div>
+        <input class="xpbox resetbox" type="checkbox" name="attr_prowessxp" value="0" checked="checked"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_prowessxp" value="1"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_prowessxp" value="2"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_prowessxp" value="3"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_prowessxp" value="4"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_prowessxp" value="5"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_prowessxp" value="6"/><span></span>
+      </div>
+      <button class="title label" type="action" name="act_roll" title="prowess" value="prowess" data-i18n="prowess"></button>
+      <input type="hidden" name="attr_prowess" value="0"/>
+      <div class="statblockholder">
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_finesse" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_finesse" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_finesse" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_finesse" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_finesse" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="finesse" value="finesse" data-i18n="finesse"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_maneuver" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_maneuver" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_maneuver" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_maneuver" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_maneuver" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="maneuver" value="maneuver" data-i18n="maneuver"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_skirmish" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_skirmish" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_skirmish" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_skirmish" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_skirmish" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="skirmish" value="skirmish" data-i18n="skirmish"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_wreck" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_wreck" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_wreck" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_wreck" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_wreck" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="wreck" value="wreck" data-i18n="wreck"></button>
+        </div>
+      </div>
+    </div>
+    <div class="col33 devotion">
+      <div class="playbook-selector">
+        <select name="attr_devotion">
+          <optgroup>
+            <option>Select a Devotion</option>
+            <option value="ferrelux">Devotion to Ferrelux</option>
+            <option value="magdak">Devotion to Magdak</option>
+            <option value="aludra">Devotion to Aludra</option>
+            <option value="kestranna">Devotion to Kestranna</option>
+            <option value="nyx">Devotion to Nyx</option>
+            <option value="morkanah">Devotion to Morkanah</option>
+            <option value="eaterofworlds">Devotion to Eater-of-Worlds</option>
+            <option value="omalaub">Devotion to Omalaub</option>
+            <option value="brossien">Devotion to Brossein</option>
+            <option value="calla">Devotion to Calla</option>
+          </optgroup>
+        </select>
+      </div>
+      <input class="drive" type="text" spellcheck="false" name="attr_devotion_drive" data-i18n-placeholder="drive"/>
+      <fieldset class="repeating_devotionadvances">
+        <div class="advancecheckholder">
+          <input class="advancecheck" type="checkbox" name="attr_advancecheck"/><span class="advancecheck"></span>
+        </div>
+        <input type="text" spellcheck="false" name="attr_devadvname" data-i18n-placeholder="advance_name"/>
+        <textarea spellcheck="false" name="attr_devadvdescription" data-i18n-placeholder="advance_description"></textarea>
+      </fieldset>
+      <div class="xpholder">
+        <div class="label">XP</div>
+        <input class="xpbox resetbox" type="checkbox" name="attr_resolvexp" value="0" checked="checked"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_resolvexp" value="1"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_resolvexp" value="2"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_resolvexp" value="3"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_resolvexp" value="4"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_resolvexp" value="5"/><span></span>
+        <input class="xpbox" type="checkbox" name="attr_resolvexp" value="6"/><span></span>
+      </div>
+      <button class="title label" type="action" name="act_roll" title="resolve" value="resolve" data-i18n="resolve"></button>
+      <input type="hidden" name="attr_resolve" value="0"/>
+      <div class="statblockholder">
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_channel" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_channel" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_channel" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_channel" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_channel" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="channel" value="channel" data-i18n="channel"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_command" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_command" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_command" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_command" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_command" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="command" value="command" data-i18n="command"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_consort" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_consort" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_consort" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_consort" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_consort" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="consort" value="consort" data-i18n="consort"></button>
+        </div>
+        <div class="statholder">
+          <input class="statbox0 statbox" type="checkbox" name="attr_sway" value="0" checked="checked"/><span class="statbox0 statbox"></span>
+          <input class="statbox1 statbox" type="checkbox" name="attr_sway" value="1"/><span class="statbox1 statbox"></span>
+          <input class="statbox2 statbox" type="checkbox" name="attr_sway" value="2"/><span class="statbox2 statbox"></span>
+          <input class="statbox3 statbox" type="checkbox" name="attr_sway" value="3"/><span class="statbox3 statbox"></span>
+          <input class="statbox4 statbox" type="checkbox" name="attr_sway" value="4"/><span class="statbox4 statbox"></span>
+          <button class="label" type="action" name="act_roll" title="sway" value="sway" data-i18n="sway"></button>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="factionsheet flex-wrap">
     <h1>Faction Sheet</h1>
@@ -199,7 +501,7 @@
 <!--name is the name of the character doing the rolling-->
 <!--stat_name is the name of the stat added to the roll-->
 <!--result is the die roll-->
-<rolltemplate class="sheet-rolltemplate-mp">
+<rolltemplate class="sheet-rolltemplate-scob">
   <table>
     <tr>
       <th colspan="2">{{roll_name}}</th>
@@ -207,15 +509,22 @@
     <tr> 
       <td colspan="2">{{name}} rolled {{#stat_name}} {{stat_name}}{{/stat_name}}{{#roll_mod}}({{roll_mod}}){{/roll_mod}}</td>
     </tr>
-    <tr>{{#rollGreater() result 9}}
-      <td class="result success">{{result}}</td>
-      <td>Success!</td>{{/rollGreater() result 9}}
-      {{#rollBetween() result 7 9}}
-      <td class="result">{{result}}</td>
-      <td>Partial Success</td>{{/rollBetween() result 7 9}}
-      {{#rollLess() result 7}}
-      <td class="result failure">{{result}}</td>
-      <td>Miss</td>{{/rollLess() result 7}}
+    <tr>{{#rollGreater() roll 5}}
+      <td class="result success">{{roll}}</td>{{#rollGreater() computed::iscrit 0}}
+      <td>Crit!</td>{{/rollGreater() computed::iscrit 0}}
+      {{#rollLess() computed::iscrit 1}}
+      <td>Success!</td>{{/rollLess() computed::iscrit 1}}
+      {{/rollGreater() roll 5}}
+      {{#rollBetween() roll 4 5}}
+      <td class="result">{{roll}}</td>
+      <td>Mixed Success</td>{{/rollBetween() roll 4 5}}
+      {{#rollLess() roll 4}}
+      <td class="result failure">{{roll}}</td>
+      <td>Miss</td>{{/rollLess() roll 4}}
+    </tr>
+    <tr>
+      <td class="result">{{computed::effectpoints}}</td>
+      <td>Effect Points</td>
     </tr>
   </table>
 </rolltemplate>
@@ -223,16 +532,370 @@
 "use strict";
 const data = {
 	"cultures":{
+		"truthbearer":{
+			"drive":"truthdrive",
+			"study":0,
+			"survey":0,
+			"reveal":2,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"windborne", "culadvdescription":"windbornedesc"},
+				{"culadvname":"untouchable", "culadvdescription":"untouchabledesc"}
+			]
+		},
+		"keeper":{
+			"drive":"keeperdrive",
+			"study":2,
+			"survey":0,
+			"reveal":0,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"forgottenrites", "culadvdescription":"forgottenritesdesc"},
+				{"culadvname":"willofthecrystal", "culadvdescription":"willofthecrystaldesc"}
+			]
+		},
+		"kinbound":{
+			"drive":"kinbounddrive",
+			"study":0,
+			"survey":1,
+			"reveal":1,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"familyties", "culadvdescription":"familytiesdesc"},
+				{"culadvname":"trustinme", "culadvdescription":"trustinmedesc"}
+			]
+		},
+		"anarch":{
+			"drive":"anarchdrive",
+			"study":0,
+			"survey":1,
+			"reveal":0,
+			"tinker":1,
+			"advances":[
+				{"culadvname":"blackblock", "culadvdescription":"blackblockdesc"},
+				{"culadvname":"communityorganizer", "culadvdescription":"communityorganizerdesc"}
+			]
+		},
+		"scoundrel":{
+			"drive":"scoundreldrive",
+			"study":0,
+			"survey":2,
+			"reveal":0,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"pokerface", "culadvdescription":"pokerfacedesc"},
+				{"culadvname":"friendsinlow", "culadvdescription":"friendsinlowdesc"}
+			]
+		},
+		"fireheart":{
+			"drive":"fireheartdrive",
+			"study":0,
+			"survey":0,
+			"reveal":1,
+			"tinker":1,
+			"advances":[
+				{"culadvname":"burninghands", "culadvdescription":"burninghandsdesc"},
+				{"culadvname":"endlesspassion", "culadvdescription":"endlesspassiondesc"}
+			]
+		},
+		"caretaker":{
+			"drive":"caretakerdrive",
+			"study":1,
+			"survey":0,
+			"reveal":0,
+			"tinker":1,
+			"advances":[
+				{"culadvname":"healerofbodies", "culadvdescription":"healerofbodiesdesc"},
+				{"culadvname":"leaderofhearts", "culadvdescription":"leaderofheartsdesc"}
+			]
+		},
+		"innovator":{
+			"drive":"innovatordrive",
+			"study":0,
+			"survey":0,
+			"reveal":0,
+			"tinker":2,
+			"advances":[
+				{"culadvname":"alchemicaldistiller", "culadvdescription":"alchemicaldistillerdesc"},
+				{"culadvname":"demolisher", "culadvdescription":"demolisherdesc"}
+			]
+		},
+		"courtier":{
+			"drive":"courtierdrive",
+			"study":1,
+			"survey":1,
+			"reveal":0,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"courtspy", "culadvdescription":"courtspydesc"},
+				{"culadvname":"harmlesshedonist", "culadvdescription":"harmlesshedonistdesc"}
+			]
+		},		
+		"caskclad":{
+			"drive":"caskcladdrive",
+			"study":1,
+			"survey":0,
+			"reveal":1,
+			"tinker":0,
+			"advances":[
+				{"culadvname":"loyalpatron", "culadvdescription":"loyalpatrondesc"},
+				{"culadvname":"drunkenwarrior", "culadvdescription":"drunkenwarriordesc"}
+			]
+		}
 	},
 	"lineages":{
+		"devahil":{
+			"drive":"devahildrive",
+			"finesse":0,
+			"maneuver":1,
+			"skirmish":1,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"memoryfog", "linadvdescription":"memoryfogdesc"},
+				{"linadvname":"likelookingmirror", "linadvdescription":"likelookingmirrordesc"}
+			]
+		},
+		"aesigilar":{
+			"drive":"aesigilardrive",
+			"finesse":1,
+			"maneuver":1,
+			"skirmish":0,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"hostswap", "linadvdescription":"hostswapdesc"},
+				{"linadvname":"patternsoffate", "linadvdescription":"patternsoffatedesc"}
+			]
+		},
+		"revenant":{
+			"drive":"revenantdrive",
+			"finesse":0,
+			"maneuver":0,
+			"skirmish":2,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"speakerforthedead", "linadvdescription":"speakerforthedeaddesc"},
+				{"linadvname":"thatwhichisdead", "linadvdescription":"thatwhichisdeaddesc"}
+			]
+		},
+		"gnomish":{
+			"drive":"gnomishdrive",
+			"finesse":2,
+			"maneuver":0,
+			"skirmish":0,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"phantasmalraiment", "linadvdescription":"phantasmalraimentdesc"},
+				{"linadvname":"artificer", "linadvdescription":"artificerdesc"}
+			]
+		},
+		"giant":{
+			"drive":"giantdrive",
+			"finesse":0,
+			"maneuver":0,
+			"skirmish":0,
+			"wreck":2,
+			"advances":[
+				{"linadvname":"childofatlas", "linadvdescription":"childofatlasdesc"},
+				{"linadvname":"unstoppablemight", "linadvdescription":"unstoppablemightdesc"}
+			]
+		},
+		"wyrm":{
+			"drive":"wyrmdrive",
+			"finesse":0,
+			"maneuver":0,
+			"skirmish":1,
+			"wreck":1,
+			"advances":[
+				{"linadvname":"scalesofbattle", "linadvdescription":"scalesofbattledesc"},
+				{"linadvname":"auraofmenace", "linadvdescription":"auraofmenacedesc"}
+			]
+		},
+		"polari":{
+			"drive":"polaridrive",
+			"finesse":1,
+			"maneuver":0,
+			"skirmish":1,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"starlightsword", "linadvdescription":"starlightsworddesc"},
+				{"linadvname":"zealousreflexes", "linadvdescription":"zealousreflexesdesc"}
+			]
+		},
+		"ancestral":{
+			"drive":"ancestraldrive",
+			"finesse":0,
+			"maneuver":1,
+			"skirmish":1,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"cladinlightning", "linadvdescription":"cladinlightningdesc"},
+				{"linadvname":"guardianoath", "linadvdescription":"guardianoathdesc"}
+			]
+		},
+		"sylvan":{
+			"drive":"sylvandrive",
+			"finesse":0,
+			"maneuver":1,
+			"skirmish":0,
+			"wreck":1,
+			"advances":[
+				{"linadvname":"verdantregeneration", "linadvdescription":"verdantregenerationdesc"},
+				{"linadvname":"familytree", "linadvdescription":"familytreedesc"}
+			]
+		},
+		"waterborn":{
+			"drive":"waterborndrive",
+			"finesse":0,
+			"maneuver":2,
+			"skirmish":0,
+			"wreck":0,
+			"advances":[
+				{"linadvname":"waterbender", "linadvdescription":"waterbenderdesc"},
+				{"linadvname":"purewaters", "linadvdescription":"purewatersdesc"}
+			]
+		}
 	},
-	"devotions:":{
+	"devotions":{
+		"ferrelux":{
+			"drive":"ferreluxdrive",
+			"channel":0,
+			"command":0,
+			"consort":1,
+			"sway":1,
+			"advances":[
+				{"devadvname":"rumourmonger", "devadvdescription":"rumourmongerdesc"},
+				{"devadvname":"rebelseye", "devadvdescription":"rebelseyedesc"}
+			]
+		},
+		"magdak":{
+			"drive":"magdakdrive",
+			"channel":1,
+			"command":1,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"sleeplessservant", "devadvdescription":"sleeplessservantdesc"},
+				{"devadvname":"patternsight", "devadvdescription":"patternsightdesc"}
+			]
+		},
+		"aludra":{
+			"drive":"aludradrive",
+			"channel":1,
+			"command":0,
+			"consort":0,
+			"sway":1,
+			"advances":[
+				{"devadvname":"eternaltears", "devadvdescription":"eternaltearsdesc"},
+				{"devadvname":"memorypalace", "devadvdescription":"memorypalacedesc"}
+			]
+		},
+		"kestranna":{
+			"drive":"kestrannadrive",
+			"channel":0,
+			"command":1,
+			"consort":1,
+			"sway":0,
+			"advances":[
+				{"devadvname":"kestrsbounty", "devadvdescription":"kestrsbountydesc"},
+				{"devadvname":"rannasharvest", "devadvdescription":"rannasharvestdesc"}
+			]
+		},
+		"nyx":{
+			"drive":"nyxdrive",
+			"channel":1,
+			"command":0,
+			"consort":0,
+			"sway":1,
+			"advances":[
+				{"devadvname":"deeplistener", "devadvdescription":"deeplistenerdesc"},
+				{"devadvname":"dreamwalker", "devadvdescription":"dreamwalkerdesc"}
+			]
+		},
+		"morkanah":{
+			"drive":"morkanahdrive",
+			"channel":1,
+			"command":1,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"morkanahslove", "devadvdescription":"morkanahslovedesc"},
+				{"devadvname":"shelteringstone", "devadvdescription":"shelteringstonedesc"}
+			]
+		},
+		"eaterofworlds":{
+			"drive":"eaterofworldsdrive",
+			"channel":0,
+			"command":2,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"fathershunger", "devadvdescription":"fathershungerdesc"},
+				{"devadvname":"saboteur", "devadvdescription":"saboteurdesc"}
+			]
+		},
+		"omalaub":{
+			"drive":"omalaubdrive",
+			"channel":2,
+			"command":0,
+			"consort":0,
+			"sway":0,
+			"advances":[
+				{"devadvname":"thespectralcloak", "devadvdescription":"thespectralcloakdesc"},
+				{"devadvname":"numbblessing", "devadvdescription":"numbblessingdesc"}
+			]
+		},
+		"brossien":{
+			"drive":"brossiendrive",
+			"channel":0,
+			"command":0,
+			"consort":2,
+			"sway":0,
+			"advances":[
+				{"devadvname":"heartsong", "devadvdescription":"heartsongdesc"},
+				{"devadvname":"bardicmagics", "devadvdescription":"bardicmagicsdesc"}
+			]
+		},
+		"calla":{
+			"drive":"calladrive",
+			"channel":0,
+			"command":0,
+			"consort":0,
+			"sway":2,
+			"advances":[
+				{"devadvname":"giftofgullibility", "devadvdescription":"giftofgullibilitydesc"},
+				{"devadvname":"masterchaos", "devadvdescription":"masterchaosdesc"}
+			]
+		}
 	}
 };
 const sheetVersion = "0.1";
 const sheetName = "Sig: City of Blades";
-//Translation of data
 const getTranslation = (key) => (getTranslationByKey(key) || "NO_TRANSLATION_FOUND");
+//Translation of data
+Object.keys(data.cultures).forEach(culture => {
+	console.log(getTranslation(culture));
+	data.cultures[culture].drive = getTranslation(data.cultures[culture].drive);
+	data.cultures[culture].advances.forEach(advance => {
+		advance.culadvname = getTranslation(advance.culadvname);
+		advance.culadvdescription = getTranslation(advance.culadvdescription);
+	});
+});
+Object.keys(data.lineages).forEach(lineage => {
+	console.log(getTranslation(lineage));
+	data.lineages[lineage].drive = getTranslation(data.lineages[lineage].drive);
+	data.lineages[lineage].advances.forEach(advance => {
+		advance.linadvname = getTranslation(advance.linadvname);
+		advance.linadvdescription = getTranslation(advance.linadvdescription);
+	});
+});
+Object.keys(data.devotions).forEach(devotion => {
+	console.log(getTranslation(devotion));
+	data.devotions[devotion].drive = getTranslation(data.devotions[devotion].drive);
+	data.devotions[devotion].advances.forEach(advance => {
+		advance.devadvname = getTranslation(advance.devadvname);
+		advance.devadvdescription = getTranslation(advance.devadvdescription);
+	});
+});
 /* Utility functions - shouldn't need to touch most of these */
 //Completely lifted from joesinghaus
 //There are probably many that I don't need ¯\_(ツ)_/¯
@@ -354,6 +1017,15 @@ handleBoxesFill = (name, upToFour) => {
 		});
 	});
 };
+// Helper function to grab player input 
+const getQuery = async (queryText) => {
+    const rxGrab = /^0\[(.*)\]\s*$/;
+    let rollBase = `! {{query1=[[ 0[${queryText}] ]]}}`, // just a [[0]] roll with an inline tag
+        queryRoll = await startRoll(rollBase),
+        queryResponse = (queryRoll.results.query1.expression.match(rxGrab) || [])[1]; 
+    finishRoll(queryRoll.rollId); // you can just let this time out if you want - we're done with it
+    return queryResponse;
+};
 //Functions for actions happening in the sheet
 on("change:freebooterorfaction", event => {
 	getAttrs(["freebooterorfaction", "change_attributes"], v => {
@@ -363,6 +1035,120 @@ on("change:freebooterorfaction", event => {
 		} else if (v.freebooterorfaction == "Faction Sheet"){
 			setAttr("sheettype", 2);
 		}
+	});
+});
+on("change:culture", event=>{
+	getAttrs(["culture", "change_attributes"], v => {
+		console.log(v.culture);
+		fillRepeatingSectionFromData("cultureadvances",data.cultures[v.culture].advances, true);
+		setAttr("culture_drive", data.cultures[v.culture].drive);
+		setAttr("study", data.cultures[v.culture].study);
+		setAttr("survey", data.cultures[v.culture].survey);
+		setAttr("reveal", data.cultures[v.culture].reveal);
+		setAttr("tinker", data.cultures[v.culture].tinker);
+	});
+});
+//Calculate Insight
+on("change:study change:survey change:reveal change:tinker", function() {
+	getAttrs(["study","survey","reveal","tinker"], v=>{
+		var insight = 0;
+		if (v.study > 0){insight += 1};
+		if (v.survey > 0){insight += 1};
+		if (v.reveal > 0){insight += 1};
+		if (v.tinker > 0){insight += 1};
+		setAttr("insight", insight);
+		console.log("New insight: "+insight);
+	});
+});
+//Calculate Prowess
+on("change:finesse change:maneuver change:skirmish change:wreck", function() {
+	getAttrs(["finesse","maneuver","skirmish","wreck"], v=>{
+		var prowess = 0;
+		if (v.finesse > 0){prowess += 1};
+		if (v.maneuver > 0){prowess += 1};
+		if (v.skirmish > 0){prowess += 1};
+		if (v.wreck > 0){prowess += 1};
+		setAttr("prowess", prowess);
+	});
+});
+//Calculate Resolve
+on("change:channel change:command change:consort change:sway", function() {
+	getAttrs(["channel","command","consort","sway"], v=>{
+		var resolve = 0;
+		if (v.channel > 0){resolve += 1};
+		if (v.command > 0){resolve += 1};
+		if (v.consort > 0){resolve += 1};
+		if (v.sway > 0){resolve += 1};
+		setAttr("resolve", resolve);
+	});
+});
+on("change:lineage", event=>{
+	getAttrs(["lineage", "change_attributes"], v => {
+		console.log(v.lineage);
+		fillRepeatingSectionFromData("lineageadvances",data.lineages[v.lineage].advances, true);
+		setAttr("lineage_drive", data.lineages[v.lineage].drive);
+		setAttr("finesse", data.lineages[v.lineage].finesse);
+		setAttr("maneuver", data.lineages[v.lineage].maneuver);
+		setAttr("skirmish", data.lineages[v.lineage].skirmish);
+		setAttr("wreck", data.lineages[v.lineage].wreck);
+	});
+});
+on("change:devotion", event=>{
+	getAttrs(["devotion", "change_attributes"], v => {
+		console.log(v.devotion);
+		fillRepeatingSectionFromData("devotionadvances",data.devotions[v.devotion].advances, true);
+		setAttr("devotion_drive", data.devotions[v.devotion].drive);
+		setAttr("channel", data.devotions[v.devotion].channel);
+		setAttr("command", data.devotions[v.devotion].command);
+		setAttr("consort", data.devotions[v.devotion].consort);
+		setAttr("sway", data.devotions[v.devotion].sway);
+	});
+});
+on("clicked:roll", (event) => {
+	
+	console.log(event);
+	getAttrs([event.htmlAttributes.value], v => {
+		let statvalue = (v[Object.keys(v)[0]]);
+		let statname = Object.keys(v)[0];
+		console.log("Stat Value: "+statvalue);
+		getQuery('?{Extra Dice?|0}').then(bonusdice => {
+			console.log("Bonus Dice: "+bonusdice);
+			let numdice = parseInt(statvalue,10) + parseInt(bonusdice,10);
+			var rollexpr = "";
+			if(numdice == 0){
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[[2d6kl1]]}} {{effectpoints=[[0]]}} {{iscrit=[[0]]}}";
+			} else {
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[["+numdice+"d6k1]]}} {{effectpoints=[[0]]}} {{iscrit=[[0]]}}";
+			}
+			console.log(rollexpr);
+			startRoll(rollexpr, (results) => {
+				var points = 0;
+				var crit = 0;
+				var sixes = 0;
+				if (results.results.roll.result > 3){
+					points+=1;
+				}
+				console.log(results.results);
+				console.log("Dice: "+results.results.roll.dice);
+				results.results.roll.dice.forEach(die => {
+					if(die == 6 && points > 0){
+						sixes +=1;
+					}
+				});
+				points += sixes;
+				if (sixes > 1){
+					crit = 1;
+				}
+				console.log(points + " points | " + crit + " crit");
+				finishRoll(
+					results.rollId,
+					{
+						effectpoints: points,
+						iscrit: crit,
+					}
+				);
+			});
+		});
 	});
 });
 </script>

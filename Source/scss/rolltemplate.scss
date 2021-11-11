@@ -1,27 +1,36 @@
-.sheet-rolltemplate-sig {
+.sheet-rolltemplate-scob {
 	table {
-		border: 1px solid black;
+		border: 0px solid black;
 		width: 100%
 	}
 	th {
 		padding:5px;
-		color: white;
-		background-color: black;
-		font-family: "Courier Prime";
+		color: black;
+		background-color: #aaa;
+		font-family: "Cardo";
 		text-align: center;
-		font-size: 18px;
+		font-size: 20px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		-webkit-text-fill-color: white;
+		text-shadow:
+		2px 2px 0 #000,
+		-1px -1px 0 #000,  
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		 1px 1px 0 #000;
 
 	}
 
 	td{
 		padding:5px;
 		background-color: white;
-		font-family: "Courier Prime";
+		font-family: "Cardo";
 	}
 
 	.inlinerollresult {
 		background-color: black;
-		border: 1px solid black !important;
+		border: none !important;
 		color: white;
 		font-size: 20px;
 		.fullfail, .fullcrit{

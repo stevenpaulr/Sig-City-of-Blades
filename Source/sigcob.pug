@@ -1,12 +1,36 @@
 -
-//	const translation = locals.translation, 
-//		playbooks = Object.keys(locals.data.playbooks);
+	const translation = locals.translation,
+		cultures = Object.keys(locals.data.cultures),
+		lineages = Object.keys(locals.data.lineages),
+		devotions = Object.keys(locals.data.devotions);
 
 
 mixin checkbox(name, extraclass)
-	input(type='checkbox', class=[attributes.class, extraclass || ''], name=`attr_${name}`, value=attributes.value||'1', checked=attributes.checked)
+	input(type='checkbox', class=[attributes.class, extraclass || ''], name=`attr_${name}`, value=attributes.value, checked=attributes.checked)
 	span(class=extraclass, data-i18n!=attributes['data-i18n'])
 		block
+
+mixin newcheckbox(name, extraclass)
+	input(type='checkbox', class=[attributes.class, extraclass || ''], name=`attr_${name}`, value=attributes.value, checked=attributes.checked)
+	span
+		block
+
+mixin 6checkbox(namebase, extraclass)
+	+checkbox(namebase+'1', extraclass+'1 '+extraclass)
+	+checkbox(namebase+'2', extraclass+'2 '+extraclass)
+	+checkbox(namebase+'3', extraclass+'3 '+extraclass)
+	+checkbox(namebase+'4', extraclass+'4 '+extraclass)
+	+checkbox(namebase+'5', extraclass+'5 '+extraclass)
+	+checkbox(namebase+'6', extraclass+'6 '+extraclass)
+	.underlay
+		block
+
+mixin 4checkbox(namebase, extraclass)
+	+checkbox(namebase, extraclass+'0 '+extraclass)(value=0, checked)
+	+checkbox(namebase, extraclass+'1 '+extraclass)(value=1)
+	+checkbox(namebase, extraclass+'2 '+extraclass)(value=2)
+	+checkbox(namebase, extraclass+'3 '+extraclass)(value=3)
+	+checkbox(namebase, extraclass+'4 '+extraclass)(value=4)
 
 mixin radio(name)
 	input(type='radio', class!=attributes.class, name=`attr_${name}`, value!=attributes.value, checked=attributes.checked)
@@ -39,9 +63,10 @@ mixin autoexpand(name, i18nvalue)
 //- Creates a roll button using stat as a bonus
 mixin roll(name, stat)
 	button(
-		type='roll',
-		name=`roll_${name}`,
-		value!=`&{template:mp} {{name=@{character_name}}} {{roll_name=${translation[name]}}} {{stat_name=${translation[stat]}}} {{result=[[2d6+@{${stat}}+?{roll_mod|0}]]}}`
+		type='action',
+		name='act_roll',
+		title=`${name}`,
+		value=`${stat}`
 	)&attributes(attributes)
 
 
