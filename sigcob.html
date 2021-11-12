@@ -499,7 +499,44 @@
     </div>
   </div>
   <div class="factionsheet flex-wrap">
-    <h1>Faction Sheet</h1>
+    <input class="factionselected" type="hidden" name="attr_factionselected" value="0"/>
+    <div class="faction-selector">
+      <select name="attr_faction">
+        <optgroup>
+          <option value="0" selected="selected">Select a Faction</option>
+          <option value="ashenkeys">The Order of the Ashen Keys</option>
+          <option value="daughtersoftheraven">Daughters of the Raven</option>
+          <option value="glimmerknights">Glimmer Knights</option>
+          <option value="reforgedblades">Reforged Blades</option>
+          <option value="voidstriders">Void Striders</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="factionsheetmain">
+      <!--Left Column-->
+      <div class="col35">
+        <div class="title" data-i18n="who serve"></div>
+        <div class="title" data-i18n="gear"></div>
+        <div class="title" data-i18n="contacts"></div>
+      </div>
+      <!--middle column-->
+      <div class="col40 flex-wrap">
+        <div class="col100">
+          <div class="title" data-i18n="advances"></div>
+        </div>
+        <div class="col50">
+          <div class="title" data-i18n="treasury"></div>
+        </div>
+        <div class="col50">
+          <div class="title" data-i18n="infamy"></div>
+        </div>
+      </div>
+      <!--right column-->
+      <div class="col24b">
+        <div class="title" data-i18n="faction"></div>
+        <div class="title" data-i18n="claims"></div>
+      </div>
+    </div>
   </div>
 </div>
 <!--Mail Roll Template-->
@@ -872,6 +909,13 @@ const data = {
 				{"devadvname":"masterchaos", "devadvdescription":"masterchaosdesc"}
 			]
 		}
+	},
+	"factions":{
+		"ashenkeys":{},
+		"daughtersoftheraven":{},
+		"glimmerknights":{},
+		"reforgedblades":{},
+		"voidstriders":{}
 	}
 };
 const sheetVersion = "0.1";
@@ -1049,6 +1093,12 @@ on("change:devotion", event=>{
 		setAttr("command", data.devotions[v.devotion].command);
 		setAttr("consort", data.devotions[v.devotion].consort);
 		setAttr("sway", data.devotions[v.devotion].sway);
+	});
+});
+on("change:faction", event=>{
+	getAttrs(["faction", "change_attributes"], v => {
+		console.log(v.faction);
+		setAttr("factionselected", v.faction);
 	});
 });
 on("clicked:roll", (event) => {

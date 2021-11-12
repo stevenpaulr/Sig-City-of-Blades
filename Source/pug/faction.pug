@@ -1,0 +1,33 @@
+.factionsheet.flex-wrap
+	+hidden-input('factionselected')(value=0).factionselected
+	.faction-selector
+		select(name='attr_faction')
+			optgroup
+				option(value='0', selected=true) #{translation["selectfaction"]}
+				each faction in factions
+					option(value=faction) #{translation[faction]}
+
+	.factionsheetmain
+		//Left Column
+		.col35
+			+hidden-input('factionimage')
+			img(name='attr_factionimage')
+			.title(data-i18n="who serve")
+			.title(data-i18n="gear")
+			.title(data-i18n="contacts")
+	
+		//middle column
+		.col40.flex-wrap
+			.col100
+				.title(data-i18n="advances")
+			.col50
+				.title(data-i18n="treasury")
+			.col50
+				.title(data-i18n="infamy")
+
+
+		//right column
+		.col24b
+			.title(data-i18n="faction")
+			.title(data-i18n="claims")
+	

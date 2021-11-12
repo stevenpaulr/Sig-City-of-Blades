@@ -1,14 +1,4 @@
-+hidden-input('sheettype')(value=0).sheettype
 
-.type-selector.flex-wrap
-    .col100
-        h1(data-i18n='choosesheetcopy')
-    .col100
-        select(name='attr_freebooterorfaction')
-            optgroup
-                option() #{translation["freebooterorfaction"]}
-                option() #{translation["freebootersheet"]}
-                option() #{translation["factionsheet"]}
                 
 
 .freebootersheet.flex-wrap
@@ -312,7 +302,3 @@
             .statholder
                 +4checkbox('sway','statbox')
                 +roll('sway','sway')(data-i18n='sway').label
-
-
-.factionsheet.flex-wrap
-    h1 Faction Sheet

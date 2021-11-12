@@ -334,5 +334,22 @@
 				{"devadvname":"masterchaos", "devadvdescription":"masterchaosdesc"}
 			]
 		}
+	},
+	"factions":{
+		"ashenkeys":{
+			"img":"AshenKeysLogo.jpg"
+		},
+		"daughtersoftheraven":{
+			"img":"DaughtersLogo.jpg"
+		},
+		"glimmerknights":{
+			"img":"GlimmerKnightsLogo.jpg"
+		},
+		"reforgedblades":{
+			"img":"ReforgedBladesLogo.jpg"
+		},
+		"voidstriders":{
+			"img":"VoidStridersLogo.jpg"
+		}
 	}
 }

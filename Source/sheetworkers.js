@@ -235,6 +235,15 @@ on("change:devotion", event=>{
 });
 
 
+on("change:faction", event=>{
+
+	getAttrs(["faction", "change_attributes"], v => {
+		console.log(v.faction);
+
+		setAttr("factionselected", v.faction);
+	});
+});
+
 
 
 on("clicked:roll", (event) => {
