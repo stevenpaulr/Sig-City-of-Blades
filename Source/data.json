@@ -343,7 +343,43 @@
 			"img":"DaughtersLogo.jpg"
 		},
 		"glimmerknights":{
-			"img":"GlimmerKnightsLogo.jpg"
+			"img":"GlimmerKnightsLogo.jpg",
+			"faction":"performersguild",
+			"factionsubtitle":"",
+			"gear":[
+				{"gearname":"fineclothing", "assumed":"true", "effect":""},
+				{"gearname":"writingsupplies", "assumed":"true", "effect":""},
+				{"gearname":"starforgedchainmail", "assumed":"true", "effect":"armvsskirmish"},
+				{"gearname":"coronetofglory", "assumed":"false", "effect":"armvscommand"},
+				{"gearname":"shieldofsilverandice", "assumed":"false", "effect":"armvschannel"},
+				{"gearname":"concealinggreycloak", "assumed":"false", "effect":"armvssurvey"},
+				{"gearname":"bowstrungwithstarlight", "assumed":"false", "effect":"plusranged"},
+				{"gearname":"keenedgesilversword", "assumed":"false", "effect":"plusdemonslayer"},
+				{"gearname":"diplomaticcredentials", "assumed":"false", "effect":""},
+				{"gearname":"musicalinstrument", "assumed":"false", "effect":""},
+				{"gearname":"whitehornbindingshackles", "assumed":"false", "effect":"plusantimagic"},
+				{"gearname":"hornofalarm", "assumed":"false", "effect":"plusloud"},
+				{"gearname":"chimesoftranquility", "assumed":"false", "effect":"plussleep"}
+			],
+			"contacts":[
+				{"name":"kilkuratface", "aspect":"appearancesmatter"},
+				{"name":"yewlandthebard", "aspect":"songsmustbepreserved"},
+				{"name":"bormantheteacher", "aspect":"educationisemancipation"},
+				{"name":"illianasmokedancer", "aspect":"joyunitesus"}				
+			],
+			"advances":[
+				{"advname":"neutralgrounds", "advdescription":"neutralgroundsdesc"},
+				{"advname":"starlightshroud", "advdescription":"starlightshrouddesc"},
+				{"advname":"therimeguard", "advdescription":"therimeguarddesc"},
+				{"advname":"spynetwork", "advdescription":"spynetworkdesc"},
+				{"advname":"patronage", "advdescription":"patronagedesc"},
+				{"advname":"arcticpact", "advdescription":"arcticpactdesc"},
+				{"advname":"twilightsquires", "advdescription":"twilightsquiresdesc"},
+				{"advname":"queensoath", "advdescription":"queensoathdesc"}
+			],
+			"claims":[
+				{"type":"turf","name":"eternalstage"}
+			]
 		},
 		"reforgedblades":{
 			"img":"ReforgedBladesLogo.jpg"
@@ -351,5 +387,25 @@
 		"voidstriders":{
 			"img":"VoidStridersLogo.jpg"
 		}
-	}
+	},
+	"factionlist": [
+		{"name":"paperguard","tier":5},
+		{"name":"guildofartificers","tier":5},
+		{"name":"guildoftoil","tier":5},
+		{"name":"guildofadvocates","tier":4},
+		{"name":"siggazatteer","tier":4},
+		{"name":"riverkeepers","tier":4},
+		{"name":"cleaners","tier":3},
+		{"name":"farmersguild","tier":3},
+		{"name":"leagueofexterminators","tier":3},
+		{"name":"enforcers","tier":2},
+		{"name":"dustkeepers","tier":2},
+		{"name":"teachersguild","tier":2},
+		{"name":"nightbarons","tier":1},
+		{"name":"recyclerscooperative","tier":1},
+		{"name":"portalsmiths","tier":1},
+		{"name":"performersguild","tier":1},
+		{"name":"heraldsguild","tier":1},
+		{"name":"sagecollegium","tier":1}
+	]
 }
