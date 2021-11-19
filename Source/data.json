@@ -337,15 +337,63 @@
 	},
 	"factions":{
 		"ashenkeys":{
-			"img":"AshenKeysLogo.jpg"
+			"img":"AshenKeysLogo.jpg",
+			"faction":"sagecollegium",
+			"factionsubtitle":"markedandwise",
+			"gear":[
+				{"gearname":"elaboraterobes", "assumed":"true", "effect":""},
+				{"gearname":"ritualcomponents", "assumed":"true", "effect":""},
+				{"gearname":"arcanestaff", "assumed":"true", "effect":"plusfocus"},
+				{"gearname":"fineenchantingdagger", "assumed":"false", "effect":"plusconcealed"},
+				{"gearname":"arcanefamiliar", "assumed":"false", "effect":"plussentient"},
+				{"gearname":"tomeofsecretlore", "assumed":"false", "effect":"plusversatile"},
+				{"gearname":"forbiddenritualscroll", "assumed":"false", "effect":"plusmessy"},
+				{"gearname":"defensivecharmtali", "assumed":"false", "effect":"armorvschoice"},
+				{"gearname":"impressivehat", "assumed":"false", "effect":"plusmemorableintimidating"},
+				{"gearname":"cryptographysupplies", "assumed":"false", "effect":""},
+				{"gearname":"alchemysupplies", "assumed":"false", "effect":""},
+				{"gearname":"tinkeringtools", "assumed":"false", "effect":""}
+			],
+			"contacts":[
+				{"name":"xanak", "aspect":"coinbeearned"},
+				{"name":"yewlandthebard", "aspect":"songsmustbepreserved"},
+				{"name":"calvyn", "aspect":"memoriesareshackles"},
+				{"name":"itzel", "aspect":"youdonotunderstand"}				
+			],
+			"advances":[
+				{"advname":"invisiblelibrary", "advdescription":"invisiblelibrarydesc"},
+				{"advname":"academicexcellence", "advdescription":"academicexcellencedesc"},
+				{"advname":"loretethered", "advdescription":"loretethereddesc"},
+				{"advname":"alchemicallab", "advdescription":"alchemicallabdesc"},
+				{"advname":"scrolloftheelders", "advdescription":"scrolloftheeldersdesc"},
+				{"advname":"revolutionarycells", "advdescription":"revolutionarycellsdesc"},
+				{"advname":"thebonescribes", "advdescription":"thebonescribesdesc"},
+				{"advname":"planaranchor", "advdescription":"planaranchordesc"}
+			],
+			"claims":[
+				{"type":"turf","name":"statelibrary"}
+			]
 		},
 		"daughtersoftheraven":{
-			"img":"DaughtersLogo.jpg"
+			"img":"DaughtersLogo.jpg",
+			"faction":"",
+			"factionsubtitle":"",
+			"gear":[
+				{"gearname":"", "assumed":"true", "effect":""}
+			],
+			"contacts":[
+				{"name":"", "aspect":""}
+			],
+			"advances":[
+			],
+			"claims":[
+				{"type":"","name":""}
+			]
 		},
 		"glimmerknights":{
 			"img":"GlimmerKnightsLogo.jpg",
 			"faction":"performersguild",
-			"factionsubtitle":"",
+			"factionsubtitle":"glimmersandmaestros",
 			"gear":[
 				{"gearname":"fineclothing", "assumed":"true", "effect":""},
 				{"gearname":"writingsupplies", "assumed":"true", "effect":""},
@@ -382,10 +430,38 @@
 			]
 		},
 		"reforgedblades":{
-			"img":"ReforgedBladesLogo.jpg"
+			"img":"ReforgedBladesLogo.jpg",
+			"faction":"",
+			"factionsubtitle":"",
+			"gear":[
+				{"gearname":"", "assumed":"true", "effect":""}
+			],
+			"contacts":[
+				{"name":"", "aspect":""}
+			],
+			"advances":[
+				
+			],
+			"claims":[
+				{"type":"","name":""}
+			]
 		},
 		"voidstriders":{
-			"img":"VoidStridersLogo.jpg"
+			"img":"VoidStridersLogo.jpg",
+			"faction":"",
+			"factionsubtitle":"",
+			"gear":[
+				{"gearname":"", "assumed":"true", "effect":""}
+			],
+			"contacts":[
+				{"name":"", "aspect":""}
+			],
+			"advances":[
+				
+			],
+			"claims":[
+				{"type":"","name":""}
+			]
 		}
 	},
 	"factionlist": [
