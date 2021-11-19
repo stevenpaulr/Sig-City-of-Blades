@@ -1,7 +1,11 @@
 const sheetVersion = "0.1";
 const sheetName = "Sig: City of Blades";
 const getTranslation = (key) => (getTranslationByKey(key) || "NO_TRANSLATION_FOUND");
+const urlbase = "https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main";
 
+const insightactions = ["study", "survey", "reveal", "tinker"];
+const prowessactions = ["finesse", "maneuver", "skirmish", "wreck"];
+const resolveactions = ["channel", "command", "consort", "sway"];
 
 //Translation of data
 
@@ -118,6 +122,24 @@ const getQuery = async (queryText) => {
 
 
 
+//Helper function to add XP
+const markXP = async (attribute) => {
+
+	console.log("Mark XP");
+	getAttrs([attribute+"xp"], v =>{
+		console.log(v);
+
+		let statvalue = (v[Object.keys(v)[0]]) ?? 0;
+		let statname = Object.keys(v)[0];
+
+		if(statvalue < 6){
+			setAttr(statname, parseInt(statvalue,10) + 1);
+		}
+
+	});
+};
+
+
 //Functions for actions happening in the sheet
 
 on("change:freebooterorfaction", event => {
@@ -195,7 +217,7 @@ on("change:channel change:command change:consort change:sway", function() {
 		if (v.consort > 0){resolve += 1};
 		if (v.sway > 0){resolve += 1};
 
-		setAttr("prowess", resolve);
+		setAttr("resolve", resolve);
 
 	});
 });
@@ -241,6 +263,12 @@ on("change:faction", event=>{
 		console.log(v.faction);
 
 		setAttr("factionselected", v.faction);
+
+		if(v.faction == 0){
+			return
+		}
+
+		setAttr("factionimage",urlbase +"/Images/"+ data.factions[v.faction].img);
 	});
 });
 
@@ -316,10 +344,112 @@ on("clicked:roll", (event) => {
 
 				console.log(points + " points | " + crit + " crit");
 
+
+				if (points == 0){
+					//mark xp
+					if(resolveactions.includes(statname)){
+						markXP("resolve");
+					} else if (prowessactions.includes(statname)){
+						markXP("prowess");
+					} else if (insightactions.includes(statname)){
+						markXP("insight");
+					} else {
+						console.log("Stat Name not found for marking XP");
+					}
+
+
+				}
+
 				finishRoll(
 					results.rollId,
 					{
 						effectpoints: points,
+						iscrit: crit,
+						dice: dicelist
+					}
+				);
+			});
+		});
+	});
+
+});
+
+
+on("clicked:rollresist", (event) => {
+	
+	console.log(event);
+
+	getAttrs([event.htmlAttributes.value], v => {
+
+		let statvalue = (v[Object.keys(v)[0]]) ?? 0;
+		let statname = Object.keys(v)[0];
+
+		console.log("Stat Value: "+statvalue);
+
+		var question = "";
+		if(statname == "fortune" || statname == "preparation"){
+			question = '?{How many Dice?}';
+		} else {
+			question = '?{Extra Dice?|0}';
+		}
+
+		getQuery(question).then(bonusdice => {
+
+			console.log("Bonus Dice: "+bonusdice);
+
+			var numdice = parseInt(statvalue,10) + parseInt(bonusdice,10);
+
+			//This will make sure to give the value of zero instead of null
+			if(!numdice){
+				numdice = 0;
+			}
+
+
+			var rollexpr = "";
+
+			if(numdice == 0){
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[[2d6kl1]]}} {{dice=[[0]]}} {{stress=[[0]]}} {{iscrit=[[0]]}}";
+			} else {
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[["+numdice+"d6k1]]}} {{dice=[[0]]}} {{stress=[[0]]}} {{iscrit=[[0]]}}";
+			}
+
+			console.log(rollexpr);
+
+			startRoll(rollexpr, (results) => {
+
+				var stress = 0;
+				var crit = 0;
+				var sixes = 0;
+				var dicelist = "";
+
+				stress = 6 - results.results.roll.result;
+
+				console.log(results.results);
+				console.log("Dice: "+results.results.roll.dice);
+
+				results.results.roll.dice.forEach(die => {
+					dicelist = dicelist + die + " "
+
+					if(die == 6){
+						sixes +=1;
+					}
+				});
+
+				if (sixes > 1){
+					crit = 1;
+
+					stress = -1;
+				}
+
+
+				if (stress >= 3){
+					markXP(statname);
+				}
+
+				finishRoll(
+					results.rollId,
+					{
+						stress: stress,
 						iscrit: crit,
 						dice: dicelist
 					}

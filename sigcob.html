@@ -314,7 +314,7 @@
         <input class="xpbox" type="checkbox" name="attr_insightxp" value="5"/><span></span>
         <input class="xpbox" type="checkbox" name="attr_insightxp" value="6"/><span></span>
       </div>
-      <button class="title label" type="action" name="act_roll" title="insight" value="insight" data-i18n="insight"></button>
+      <button class="title label" type="action" name="act_rollresist" title="insight" value="insight" data-i18n="insight"></button>
       <input type="hidden" name="attr_insight" value="0"/>
       <div class="statblockholder">
         <div class="statholder">
@@ -387,7 +387,7 @@
         <input class="xpbox" type="checkbox" name="attr_prowessxp" value="5"/><span></span>
         <input class="xpbox" type="checkbox" name="attr_prowessxp" value="6"/><span></span>
       </div>
-      <button class="title label" type="action" name="act_roll" title="prowess" value="prowess" data-i18n="prowess"></button>
+      <button class="title label" type="action" name="act_rollresist" title="prowess" value="prowess" data-i18n="prowess"></button>
       <input type="hidden" name="attr_prowess" value="0"/>
       <div class="statblockholder">
         <div class="statholder">
@@ -460,7 +460,7 @@
         <input class="xpbox" type="checkbox" name="attr_resolvexp" value="5"/><span></span>
         <input class="xpbox" type="checkbox" name="attr_resolvexp" value="6"/><span></span>
       </div>
-      <button class="title label" type="action" name="act_roll" title="resolve" value="resolve" data-i18n="resolve"></button>
+      <button class="title label" type="action" name="act_rollresist" title="resolve" value="resolve" data-i18n="resolve"></button>
       <input type="hidden" name="attr_resolve" value="0"/>
       <div class="statblockholder">
         <div class="statholder">
@@ -515,6 +515,7 @@
     <div class="factionsheetmain">
       <!--Left Column-->
       <div class="col35">
+        <input type="hidden" name="attr_factionimage"/><img name="attr_factionimage"/>
         <div class="title" data-i18n="who serve"></div>
         <div class="title" data-i18n="gear"></div>
         <div class="title" data-i18n="contacts"></div>
@@ -565,9 +566,12 @@
       <td class="result failure">{{computed::dice}}</td>
       <td>Miss</td>{{/rollLess() roll 4}}
     </tr>
-    <tr>
+    <tr>{{#effectpoints}}
       <td class="result">{{computed::effectpoints}}</td>
-      <td>Effect Points</td>
+      <td>Effect Points</td>{{/effectpoints}}
+      {{#stress}}
+      <td class="result">{{computed::stress}}</td>
+      <td>Stress</td>{{/stress}}
     </tr>
   </table>
 </rolltemplate>
@@ -911,16 +915,30 @@ const data = {
 		}
 	},
 	"factions":{
-		"ashenkeys":{},
-		"daughtersoftheraven":{},
-		"glimmerknights":{},
-		"reforgedblades":{},
-		"voidstriders":{}
+		"ashenkeys":{
+			"img":"AshenKeysLogo.jpg"
+		},
+		"daughtersoftheraven":{
+			"img":"DaughtersLogo.jpg"
+		},
+		"glimmerknights":{
+			"img":"GlimmerKnightsLogo.jpg"
+		},
+		"reforgedblades":{
+			"img":"ReforgedBladesLogo.jpg"
+		},
+		"voidstriders":{
+			"img":"VoidStridersLogo.jpg"
+		}
 	}
 };
 const sheetVersion = "0.1";
 const sheetName = "Sig: City of Blades";
 const getTranslation = (key) => (getTranslationByKey(key) || "NO_TRANSLATION_FOUND");
+const urlbase = "https://raw.githubusercontent.com/stevenpaulr/Sig-City-of-Blades/main";
+const insightactions = ["study", "survey", "reveal", "tinker"];
+const prowessactions = ["finesse", "maneuver", "skirmish", "wreck"];
+const resolveactions = ["channel", "command", "consort", "sway"];
 //Translation of data
 Object.keys(data.cultures).forEach(culture => {
 	console.log(getTranslation(culture));
@@ -1017,6 +1035,18 @@ const getQuery = async (queryText) => {
     finishRoll(queryRoll.rollId); // you can just let this time out if you want - we're done with it
     return queryResponse;
 };
+//Helper function to add XP
+const markXP = async (attribute) => {
+	console.log("Mark XP");
+	getAttrs([attribute+"xp"], v =>{
+		console.log(v);
+		let statvalue = (v[Object.keys(v)[0]]) ?? 0;
+		let statname = Object.keys(v)[0];
+		if(statvalue < 6){
+			setAttr(statname, parseInt(statvalue,10) + 1);
+		}
+	});
+};
 //Functions for actions happening in the sheet
 on("change:freebooterorfaction", event => {
 	getAttrs(["freebooterorfaction", "change_attributes"], v => {
@@ -1070,7 +1100,7 @@ on("change:channel change:command change:consort change:sway", function() {
 		if (v.command > 0){resolve += 1};
 		if (v.consort > 0){resolve += 1};
 		if (v.sway > 0){resolve += 1};
-		setAttr("prowess", resolve);
+		setAttr("resolve", resolve);
 	});
 });
 on("change:lineage", event=>{
@@ -1099,6 +1129,10 @@ on("change:faction", event=>{
 	getAttrs(["faction", "change_attributes"], v => {
 		console.log(v.faction);
 		setAttr("factionselected", v.faction);
+		if(v.faction == 0){
+			return
+		}
+		setAttr("factionimage",urlbase +"/Images/"+ data.factions[v.faction].img);
 	});
 });
 on("clicked:roll", (event) => {
@@ -1149,10 +1183,82 @@ on("clicked:roll", (event) => {
 					crit = 1;
 				}
 				console.log(points + " points | " + crit + " crit");
+				if (points == 0){
+					//mark xp
+					if(resolveactions.includes(statname)){
+						markXP("resolve");
+					} else if (prowessactions.includes(statname)){
+						markXP("prowess");
+					} else if (insightactions.includes(statname)){
+						markXP("insight");
+					} else {
+						console.log("Stat Name not found for marking XP");
+					}
+				}
 				finishRoll(
 					results.rollId,
 					{
 						effectpoints: points,
+						iscrit: crit,
+						dice: dicelist
+					}
+				);
+			});
+		});
+	});
+});
+on("clicked:rollresist", (event) => {
+	
+	console.log(event);
+	getAttrs([event.htmlAttributes.value], v => {
+		let statvalue = (v[Object.keys(v)[0]]) ?? 0;
+		let statname = Object.keys(v)[0];
+		console.log("Stat Value: "+statvalue);
+		var question = "";
+		if(statname == "fortune" || statname == "preparation"){
+			question = '?{How many Dice?}';
+		} else {
+			question = '?{Extra Dice?|0}';
+		}
+		getQuery(question).then(bonusdice => {
+			console.log("Bonus Dice: "+bonusdice);
+			var numdice = parseInt(statvalue,10) + parseInt(bonusdice,10);
+			//This will make sure to give the value of zero instead of null
+			if(!numdice){
+				numdice = 0;
+			}
+			var rollexpr = "";
+			if(numdice == 0){
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[[2d6kl1]]}} {{dice=[[0]]}} {{stress=[[0]]}} {{iscrit=[[0]]}}";
+			} else {
+				rollexpr = "&{template:scob} {{name=@{character_name}}} {{roll_name="+statname+"}} {{stat_name="+statname+"}} {{roll=[["+numdice+"d6k1]]}} {{dice=[[0]]}} {{stress=[[0]]}} {{iscrit=[[0]]}}";
+			}
+			console.log(rollexpr);
+			startRoll(rollexpr, (results) => {
+				var stress = 0;
+				var crit = 0;
+				var sixes = 0;
+				var dicelist = "";
+				stress = 6 - results.results.roll.result;
+				console.log(results.results);
+				console.log("Dice: "+results.results.roll.dice);
+				results.results.roll.dice.forEach(die => {
+					dicelist = dicelist + die + " "
+					if(die == 6){
+						sixes +=1;
+					}
+				});
+				if (sixes > 1){
+					crit = 1;
+					stress = -1;
+				}
+				if (stress >= 3){
+					markXP(statname);
+				}
+				finishRoll(
+					results.rollId,
+					{
+						stress: stress,
 						iscrit: crit,
 						dice: dicelist
 					}

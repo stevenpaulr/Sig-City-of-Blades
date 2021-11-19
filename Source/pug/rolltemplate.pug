@@ -32,7 +32,11 @@ rolltemplate.sheet-rolltemplate-scob
 			td Miss
 			| {{/rollLess() roll 4}}
 		tr
+			|{{#effectpoints}}
 			td.result {{computed::effectpoints}}
 			td Effect Points
-
-	
+			|{{/effectpoints}}
+			|{{#stress}}
+			td.result {{computed::stress}}
+			td Stress
+			|{{/stress}}

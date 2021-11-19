@@ -7,7 +7,7 @@ $lighter: #c7c7c7;
 $darkgrey: #b4b4b4;
 $versiongrey: #aaa;
 $greyborder: #8c8c8c;
-$headergrey: #aaa;
+$headergrey: #000;
 $lightblack: #777;
 $lighterblack: #555;
 $fontblack: #333;
@@ -348,23 +348,17 @@ textarea.smallcaps {
 	font-size: 20px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: black;
-	-webkit-text-fill-color: white;
-	text-shadow:
-	2px 2px 0 #000,
-	-1px -1px 0 #000,  
-	1px -1px 0 #000,
-	-1px 1px 0 #000,
-	 1px 1px 0 #000;
+	color: white;
 
-	background-color: $headergrey !important;
+	background-color: black !important;
 	padding:3px 5px;
 	border-radius: 0;
 	border:none !important;
 } 
 
 button.title{
-	width: 100%;
+	width: 95%;
+	display: inline-block;
 }
 
 
@@ -556,10 +550,10 @@ button.title{
 	opacity: 0.7;
 
 	position: absolute;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
 
 
 }
@@ -720,6 +714,7 @@ button.title{
 .devotion{
 	margin:20px 0 0;
 	padding: 0px 5px;
+	text-align: center;
 
 	.playbook-selector {
 		width: 100%;
@@ -734,31 +729,28 @@ button.title{
 			text-transform: uppercase;
 			text-align: center;
 			letter-spacing: 1px;
-			color: black;
-			-webkit-text-fill-color: white;
-			text-shadow:
-			2px 2px 0 #000,
-			-1px -1px 0 #000,  
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			 1px 1px 0 #000;
+			color: white;
+
 		
-			background-color: $headergrey;
+			background-color: black;
 			padding:3px 5px;
 			border-radius: 0;
 		}
 	
 
 	}
+
+	$boxwidth:20px;
+
 	.repitem{
 
 		display:flex;
 		flex-wrap: wrap;
 
-		$boxwidth:20px;
 							
 		.advancecheckholder{
 			width: $boxwidth;
+			text-align: left;
 		}
 		/* CHECKBOXES */
 		.advancecheck {
@@ -794,7 +786,7 @@ button.title{
 		border: none;
 		font-size: 16px;
 		outline:none;
-		text-align: center;	
+		text-align: center;
 	}
 
 	input[type=text].drive{
@@ -809,6 +801,7 @@ button.title{
 		outline: none;
 		border:none;
 		font-weight: 300;
+		padding-left: $boxwidth + 5px;
 	}
 }
 

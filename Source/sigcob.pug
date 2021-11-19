@@ -70,6 +70,14 @@ mixin roll(name, stat)
 		value=`${stat}`
 	)&attributes(attributes)
 
+//- Creates a roll button using stat as a bonus
+mixin rollresist(name, stat)
+	button(
+		type='action',
+		name='act_rollresist',
+		title=`${name}`,
+		value=`${stat}`
+	)&attributes(attributes)
 
 
 .sheet-wrapper
