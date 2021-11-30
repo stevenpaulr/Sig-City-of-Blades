@@ -250,6 +250,10 @@ $fontblack: #333;
 	width: 24.25%;
 	flex-shrink:0;
 }
+.col25 {
+	width: 25%;
+	flex-shrink:0;
+}
 .col30 {
 	width: 30%;
 	flex-shrink:0;
@@ -625,8 +629,8 @@ button.title{
 
 .sixcheckbox{
 
-	background-image: linear-gradient(90deg, #fff 30%, $headergrey 30%, $headergrey 70%, #fff 67%);
-	background-size: 100% 100%;
+//	background-image: linear-gradient(90deg, #fff 30%, $headergrey 30%, $headergrey 70%, #fff 67%);
+//	background-size: 100% 100%;
 
 	$xpboxwidth:30px;
 	$xpboxpadding:0;
@@ -684,7 +688,7 @@ button.title{
 	}
 
 	.sixboxlabel{
-		color:$headergrey;
+		color:white;
 		text-align: center;
 		font-size: 1.2em;
 		line-height: $xpboxwidth * 0.8660 + 2;
@@ -708,6 +712,121 @@ button.title{
 	}
 
 }
+
+
+.twelvecheckbox{
+
+	//	background-image: linear-gradient(90deg, #fff 30%, $headergrey 30%, $headergrey 70%, #fff 67%);
+	//	background-size: 100% 100%;
+	
+	$xpboxwidth:30px;
+	$xpboxheight:$xpboxwidth * 0.8660;
+	$xpboxpadding:0;
+	
+	$width:4*$xpboxwidth;
+	width:$width;
+	height: 1.1*$width;
+	margin-left: auto;
+	margin-right: auto;
+
+	position: relative;
+	/* CHECKBOXES */
+
+	.hexbox {
+		position:absolute !important;
+		margin-right: -$xpboxwidth;
+	}
+	.hexbox1{
+		top:0;
+		left:$width/2 - 1.25*$xpboxwidth;
+	}
+	.hexbox2{
+		top:0.5*$xpboxheight;
+		left:$width/2 - 0.5*$xpboxwidth;
+	}
+	.hexbox3{
+		top:0;
+		left:$width/2 + 0.25*$xpboxwidth;
+	}
+	.hexbox4{
+		top:1.5*$xpboxheight;
+		left:0;
+	}
+	.hexbox5{
+		top:$xpboxheight;
+		left:$width/2 - 1.25*$xpboxwidth;
+	}
+	.hexbox6{
+		top:$xpboxheight;
+		left:$width/2 + 0.25*$xpboxwidth;
+	}
+	.hexbox7{
+		top:1.5*$xpboxheight;
+		right:$xpboxwidth;
+	}
+	.hexbox8{
+		top:2*$xpboxheight;
+		left:$width/2 - 1.25*$xpboxwidth;
+	}
+	.hexbox9{
+		top:2*$xpboxheight;
+		left:$width/2 + 0.25*$xpboxwidth;
+	}
+	.hexbox10{
+		top:3*$xpboxheight;
+		left:$width/2 - 1.25*$xpboxwidth;
+	}
+	.hexbox11{
+		top:2.5*$xpboxheight;
+		left:$width/2 - 0.5*$xpboxwidth;
+	}
+	.hexbox12{
+		top:3*$xpboxheight;
+		left:$width/2 + 0.25*$xpboxwidth;
+	}
+
+
+	.underlay{
+		position: absolute;
+		height: $xpboxwidth * 0.8660;
+		width: $xpboxwidth;
+		left:$width/2 - $xpboxwidth/2;
+		top:1.5*$xpboxheight;
+		background-image: url($urlbase+"/Images/hex-h-checked.svg");
+
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		
+	}
+
+	.twelveboxlabel{
+		color:white;
+		text-align: center;
+		font-size: 1.2em;
+		line-height: $xpboxheight + 2;
+	}
+
+
+	input.hexbox, .hexbox + span {
+		height: $xpboxwidth * 0.8660;
+		width: $xpboxwidth;
+		flex: 0 0 auto;
+	}
+
+	.hexbox + span {
+		background-image: url($urlbase+"/Images/hex-h-unchecked.svg");
+	}
+	.hexbox:checked + span {
+		background-image: url($urlbase+"/Images/hex-h-checked.svg");
+	}
+	.hexbox:hover + span {
+		opacity: 0.7;
+	}
+
+}
+
+
 
 .culture,
 .lineage,
@@ -948,6 +1067,208 @@ button.title{
 
 .factionsheet{
 	display: flex;
+
+	.leftcolumn,
+	.middlecolumn,
+	.rightcolumn{
+
+		padding:0 5px;
+
+	}
+
+
+	.subtitle {
+		font-style: italic;
+	}
+
+	.repeating_gear {
+		$boxwidth:20px;
+
+		.repitem{
+	
+			display:flex;
+			flex-wrap: wrap;
+	
+		
+			/* CHECKBOXES */
+			.gearcheck {
+				margin-right: -$boxwidth;
+			}
+			input.gearcheck, .gearcheck + span {
+				height: $boxwidth;
+				width: $boxwidth;
+				flex: 0 0 auto;
+			}
+		
+			.gearcheck + span {
+				background-image: url($urlbase+"/Images/dia-unchecked.svg");
+			}
+			.gearcheck:checked + span {
+				background-image: url($urlbase+"/Images/dia-checked.svg");
+			}
+			.gearcheck:hover + span {
+				opacity: 0.7;
+			}
+	
+			input.effect {
+				margin-left: $boxwidth +10px !important; 
+				margin-bottom:5px !important;
+				font-style: italic;
+				font-weight: 300 !important;
+			}
+
+			input[type=text]{
+				text-align: left;
+				border:none;
+				width: 90%;
+				height: $boxwidth;
+				font-weight: 700;
+				font-size: 16px;
+				margin: 0 0 0 $boxwidth+5px;
+			}
+		
+		}
+	}
+
+	.repeating_contacts{
+		.repitem{
+	
+			display:flex;
+			flex-wrap: wrap;
+			border-bottom: 1px solid black;
+
+
+			input[type=text]{
+				border:none;
+				width:50%;
+				font-size:14px;
+				margin:0;
+			}
+
+			.contactname{
+				text-align: right;
+				background-color: #ccc;
+				padding: 5px 5px 5px 0;
+			}
+			.contactaspect{
+				text-align: left;
+				padding: 5px 0 5px 5px;
+			}
+		}
+	}
+
+	.repeating_advances{
+		$boxwidth:30px;
+
+		.repitem{
+	
+			display:flex;
+			flex-wrap: wrap;
+	
+			/* CHECKBOXES */
+			.advancecheck {
+				margin-right: -$boxwidth;
+			}
+			input.advancecheck, .advancecheck + span {
+				height: $boxwidth;
+				width: $boxwidth;
+				flex: 0 0 auto;
+			}
+		
+			.advancecheck + span {
+				background-image: url($urlbase+"/Images/dia-unchecked.svg");
+			}
+			.advancecheck:checked + span {
+				background-image: url($urlbase+"/Images/dia-checked.svg");
+			}
+			.advancecheck:hover + span {
+				opacity: 0.7;
+			}
+	
+			input[type=text]{
+				text-align: left;
+				width: 85%;
+				height: $boxwidth;
+				font-weight: 700;
+				margin: 0 0 0 $boxwidth+5px;
+			}
+			textarea{
+				font-weight: 300px;
+				margin: 0 0 0 $boxwidth+5px;
+				height: 100px;
+			}
+		
+		}
+	}
+
+	.repeating_factions{
+		.repitem{
+			display: flex;
+			flex-wrap: nowrap;
+			margin-top: 10px;
+		}
+
+		input.tier,
+		input.status{
+			width: 30px;
+			text-align: center;
+			border-color: black;
+		}
+
+		input.tier{
+			border-radius: 20% 0 0 20%;
+		}
+
+		input.status{
+			border-radius: 0 20% 20% 0;
+		}
+
+		.factionname{
+			text-align: left;
+			padding-left: 5px;
+		}
+
+		input[type="number"]::-webkit-inner-spin-button,
+		input[type="number"]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+	}
+
+	.repeating_claims{
+		.repitem{
+	
+			display:flex;
+			flex-wrap: wrap;
+			border-bottom: 1px solid black;
+
+
+			input[type=text]{
+				border:none;
+				font-size:14px;
+				margin:0;
+			}
+
+			.claimtype{
+				text-align: right;
+				background-color: #ccc;
+				padding: 5px 5px 5px 0;
+				width:35%;
+			}
+			.claimname{
+				text-align: left;
+				padding: 5px 0 5px 5px;
+				width:65%;
+			}
+		}
+	}
+
+	.infamy,
+	.treasury{
+		margin-bottom: 5px;
+	}
+
 }
 
 .faction-selector {
@@ -976,6 +1297,4 @@ button.title{
 		padding:3px 5px;
 		border-radius: 0;
 	}
-
-
 }

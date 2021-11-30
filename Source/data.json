@@ -335,24 +335,24 @@
 			]
 		}
 	},
-	"factions":{
+	"crews":{
 		"ashenkeys":{
 			"img":"AshenKeysLogo.jpg",
 			"faction":"sagecollegium",
 			"factionsubtitle":"markedandwise",
 			"gear":[
-				{"gearname":"elaboraterobes", "assumed":"true", "effect":""},
-				{"gearname":"ritualcomponents", "assumed":"true", "effect":""},
-				{"gearname":"arcanestaff", "assumed":"true", "effect":"plusfocus"},
-				{"gearname":"fineenchantingdagger", "assumed":"false", "effect":"plusconcealed"},
-				{"gearname":"arcanefamiliar", "assumed":"false", "effect":"plussentient"},
-				{"gearname":"tomeofsecretlore", "assumed":"false", "effect":"plusversatile"},
-				{"gearname":"forbiddenritualscroll", "assumed":"false", "effect":"plusmessy"},
-				{"gearname":"defensivecharmtali", "assumed":"false", "effect":"armorvschoice"},
-				{"gearname":"impressivehat", "assumed":"false", "effect":"plusmemorableintimidating"},
-				{"gearname":"cryptographysupplies", "assumed":"false", "effect":""},
-				{"gearname":"alchemysupplies", "assumed":"false", "effect":""},
-				{"gearname":"tinkeringtools", "assumed":"false", "effect":""}
+				{"gearname":"elaboraterobes", "gearcheck":1, "effect":""},
+				{"gearname":"ritualcomponents", "gearcheck":1, "effect":""},
+				{"gearname":"arcanestaff", "gearcheck":1, "effect":"plusfocus"},
+				{"gearname":"fineenchantingdagger", "gearcheck":0, "effect":"plusconcealed"},
+				{"gearname":"arcanefamiliar", "gearcheck":0, "effect":"plussentient"},
+				{"gearname":"tomeofsecretlore", "gearcheck":0, "effect":"plusversatile"},
+				{"gearname":"forbiddenritualscroll", "gearcheck":0, "effect":"plusmessy"},
+				{"gearname":"defensivecharmtali", "gearcheck":0, "effect":"armorvschoice"},
+				{"gearname":"impressivehat", "gearcheck":0, "effect":"plusmemorableintimidating"},
+				{"gearname":"cryptographysupplies", "gearcheck":0, "effect":""},
+				{"gearname":"alchemysupplies", "gearcheck":0, "effect":""},
+				{"gearname":"tinkeringtools", "gearcheck":0, "effect":""}
 			],
 			"contacts":[
 				{"name":"xanak", "aspect":"coinbeearned"},
@@ -376,18 +376,40 @@
 		},
 		"daughtersoftheraven":{
 			"img":"DaughtersLogo.jpg",
-			"faction":"",
-			"factionsubtitle":"",
+			"faction":"heraldsguild",
+			"factionsubtitle":"birdsandwatchers",
 			"gear":[
-				{"gearname":"", "assumed":"true", "effect":""}
+				{"gearname":"travellinggarb", "gearcheck":1, "effect":""},
+				{"gearname":"blackravencloak", "gearcheck":1, "effect":"armvssurvey"},
+				{"gearname":"mailsatchelholding", "gearcheck":1, "effect":""},
+				{"gearname":"shadowforgedarmour", "gearcheck":0, "effect":"armvsskirmish"},
+				{"gearname":"travellinggear", "gearcheck":0, "effect":""},
+				{"gearname":"keenedgedblade", "gearcheck":0, "effect":"plusrangedinfinite"},
+				{"gearname":"spearchoosing", "gearcheck":0, "effect":"plusvengeful"},
+				{"gearname":"fineclothingandjewelry", "gearcheck":0, "effect":""},
+				{"gearname":"burglarygear", "gearcheck":0, "effect":""},
+				{"gearname":"gloriousmask", "gearcheck":0, "effect":"plusauthoritative"},
+				{"gearname":"wrathfulmask", "gearcheck":0, "effect":"plusterrifying"},
+				{"gearname":"facelessmask", "gearcheck":0, "effect":"plusforgotten"}
 			],
 			"contacts":[
-				{"name":"", "aspect":""}
+				{"name":"kilkuratface", "aspect":"appearancesmatter"},
+				{"name":"xanak", "aspect":"coinbeearned"},
+				{"name":"marak", "aspect":"trustisablade"},
+				{"name":"harun", "aspect":"everyonehasprice"}
 			],
 			"advances":[
+				{"advname":"lettersofintroduction", "advdescription":"lettersofintroductiondesc"},
+				{"advname":"seasontraveller", "advdescription":"seasontravellerdesc"},
+				{"advname":"atlasofsig", "advdescription":"atlasofsigdesc"},
+				{"advname":"seeker", "advdescription":"seekerdesc"},
+				{"advname":"farwhispers", "advdescription":"farwhispersdesc"},
+				{"advname":"rumourmongers", "advdescription":"rumourmongersdesc"},
+				{"advname":"windtethered", "advdescription":"windtethereddesc"},
+				{"advname":"thewrens", "advdescription":"thewrensdesc"}
 			],
 			"claims":[
-				{"type":"","name":""}
+				{"type":"turf","name":"unifiedsigpostalservice"}
 			]
 		},
 		"glimmerknights":{
@@ -395,19 +417,19 @@
 			"faction":"performersguild",
 			"factionsubtitle":"glimmersandmaestros",
 			"gear":[
-				{"gearname":"fineclothing", "assumed":"true", "effect":""},
-				{"gearname":"writingsupplies", "assumed":"true", "effect":""},
-				{"gearname":"starforgedchainmail", "assumed":"true", "effect":"armvsskirmish"},
-				{"gearname":"coronetofglory", "assumed":"false", "effect":"armvscommand"},
-				{"gearname":"shieldofsilverandice", "assumed":"false", "effect":"armvschannel"},
-				{"gearname":"concealinggreycloak", "assumed":"false", "effect":"armvssurvey"},
-				{"gearname":"bowstrungwithstarlight", "assumed":"false", "effect":"plusranged"},
-				{"gearname":"keenedgesilversword", "assumed":"false", "effect":"plusdemonslayer"},
-				{"gearname":"diplomaticcredentials", "assumed":"false", "effect":""},
-				{"gearname":"musicalinstrument", "assumed":"false", "effect":""},
-				{"gearname":"whitehornbindingshackles", "assumed":"false", "effect":"plusantimagic"},
-				{"gearname":"hornofalarm", "assumed":"false", "effect":"plusloud"},
-				{"gearname":"chimesoftranquility", "assumed":"false", "effect":"plussleep"}
+				{"gearname":"fineclothing", "gearcheck":1, "effect":""},
+				{"gearname":"writingsupplies", "gearcheck":1, "effect":""},
+				{"gearname":"starforgedchainmail", "gearcheck":1, "effect":"armvsskirmish"},
+				{"gearname":"coronetofglory", "gearcheck":0, "effect":"armvscommand"},
+				{"gearname":"shieldofsilverandice", "gearcheck":0, "effect":"armvschannel"},
+				{"gearname":"concealinggreycloak", "gearcheck":0, "effect":"armvssurvey"},
+				{"gearname":"bowstrungwithstarlight", "gearcheck":0, "effect":"plusranged"},
+				{"gearname":"keenedgesilversword", "gearcheck":0, "effect":"plusdemonslayer"},
+				{"gearname":"diplomaticcredentials", "gearcheck":0, "effect":""},
+				{"gearname":"musicalinstrument", "gearcheck":0, "effect":""},
+				{"gearname":"whitehornbindingshackles", "gearcheck":0, "effect":"plusantimagic"},
+				{"gearname":"hornofalarm", "gearcheck":0, "effect":"plusloud"},
+				{"gearname":"chimesoftranquility", "gearcheck":0, "effect":"plussleep"}
 			],
 			"contacts":[
 				{"name":"kilkuratface", "aspect":"appearancesmatter"},
@@ -431,36 +453,78 @@
 		},
 		"reforgedblades":{
 			"img":"ReforgedBladesLogo.jpg",
-			"faction":"",
-			"factionsubtitle":"",
+			"faction":"recyclerscooperative",
+			"factionsubtitle":"slagsandmelters",
 			"gear":[
-				{"gearname":"", "assumed":"true", "effect":""}
+				{"gearname":"nondescriptclothing", "gearcheck":1, "effect":""},
+				{"gearname":"recycledtools", "gearcheck":1, "effect":""},
+				{"gearname":"symbioticooze", "gearcheck":0, "effect":"plussentempower"},
+				{"gearname":"symbolofauth", "gearcheck":0, "effect":"plusimpressive"},
+				{"gearname":"salvagedarmour", "gearcheck":0, "effect":"armvsskirmish"},
+				{"gearname":"finespiritsorpoison", "gearcheck":0, "effect":"plusdebilitating"},
+				{"gearname":"ancientblade", "gearcheck":0, "effect":"plusepic"},
+				{"gearname":"sackoffoodanddrink", "gearcheck":0, "effect":""},
+				{"gearname":"demolitiongear", "gearcheck":0, "effect":""},
+				{"gearname":"alchemygear", "gearcheck":0, "effect":""},
+				{"gearname":"ajarofhungryooze", "gearcheck":0, "effect":""}
 			],
 			"contacts":[
-				{"name":"", "aspect":""}
+				{"name":"marak", "aspect":"trustisablade"},
+				{"name":"bormantheteacher", "aspect":"educationisemancipation"},
+				{"name":"calvyn", "aspect":"memoriesareshackles"},
+				{"name":"khana", "aspect":"vengeanceiseternal"}
 			],
 			"advances":[
-				
+				{"advname":"scrapvalue", "advdescription":"scrapvaluedesc"},
+				{"advname":"oozefriend", "advdescription":"oozefrienddesc"},
+				{"advname":"rustworker", "advdescription":"rustworkerdesc"},
+				{"advname":"theorphannetwork", "advdescription":"theorphannetworkdesc"},
+				{"advname":"theunwashedmasses", "advdescription":"theunwashedmassesdesc"},
+				{"advname":"thingsspeak", "advdescription":"thingsspeakdesc"},
+				{"advname":"entropicshard", "advdescription":"entropicsharddesc"},
+				{"advname":"thescrappers", "advdescription":"thescrappersdesc"}
 			],
 			"claims":[
-				{"type":"","name":""}
+				{"type":"workshop","name":"polvanscrapyard"}
 			]
 		},
 		"voidstriders":{
 			"img":"VoidStridersLogo.jpg",
-			"faction":"",
-			"factionsubtitle":"",
+			"faction":"portalsmiths",
+			"factionsubtitle":"keysandwedges",
 			"gear":[
-				{"gearname":"", "assumed":"true", "effect":""}
+				{"gearname":"fuligindarkuniform", "gearcheck":1, "effect":""},
+				{"gearname":"writinggear", "gearcheck":1, "effect":""},
+				{"gearname":"bonehourglass", "gearcheck":1, "effect":""},
+				{"gearname":"portalshield", "gearcheck":0, "effect":"armvsrangedplusreflective"},
+				{"gearname":"potionofthegaul", "gearcheck":0, "effect":"armvsskirmplusstrength"},
+				{"gearname":"travellinggear", "gearcheck":0, "effect":""},
+				{"gearname":"axeofsmokelessflame", "gearcheck":0, "effect":"plusmessyplusvoidkiller"},
+				{"gearname":"spicesoflife", "gearcheck":0, "effect":"plusnarcoticplusprophetic"},
+				{"gearname":"spiritbottles", "gearcheck":0, "effect":"plustrap"},
+				{"gearname":"wandoflethe", "gearcheck":0, "effect":"plusneuralyzer"},
+				{"gearname":"bindingchainofsilver", "gearcheck":0, "effect":""},
+				{"gearname":"callingcensorofbrass", "gearcheck":0, "effect":""},
+				{"gearname":"banishinggoldenbell", "gearcheck":0, "effect":""}
 			],
 			"contacts":[
-				{"name":"", "aspect":""}
+				{"name":"harun", "aspect":"everyonehasprice"},
+				{"name":"illianasmokedancer", "aspect":"joyunitesus"},
+				{"name":"itzel", "aspect":"youdonotunderstand"},
+				{"name":"khana", "aspect":"vengeanceiseternal"}
 			],
 			"advances":[
-				
+				{"advname":"divinelocksmith", "advdescription":"divinelocksmithdesc"},
+				{"advname":"culteralliason", "advdescription":"culteralliasondesc"},
+				{"advname":"theplanarcodex", "advdescription":"theplanarcodexdesc"},
+				{"advname":"multiversaltranslator", "advdescription":"multiversaltranslatordesc"},
+				{"advname":"appraiserseye", "advdescription":"appraiserseyedesc"},
+				{"advname":"thegreatmaterialcontinuum", "advdescription":"thegreatmaterialcontinuumdesc"},
+				{"advname":"gatewayechoes", "advdescription":"gatewayechoesdesc"},
+				{"advname":"theexorcists", "advdescription":"theexorcistsdesc"}				
 			],
 			"claims":[
-				{"type":"","name":""}
+				{"type":"hideout","name":"mirrorwalk"}
 			]
 		}
 	},

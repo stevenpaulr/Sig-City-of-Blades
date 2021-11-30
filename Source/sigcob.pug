@@ -2,8 +2,8 @@
 	const translation = locals.translation,
 		cultures = Object.keys(locals.data.cultures),
 		lineages = Object.keys(locals.data.lineages),
-		devotions = Object.keys(locals.data.devotions);
-		factions = Object.keys(locals.data.factions);
+		devotions = Object.keys(locals.data.devotions),
+		crews = Object.keys(locals.data.crews);
 
 
 mixin checkbox(name, extraclass)
@@ -23,6 +23,22 @@ mixin 6checkbox(namebase, extraclass)
 	+checkbox(namebase+'4', extraclass+'4 '+extraclass)
 	+checkbox(namebase+'5', extraclass+'5 '+extraclass)
 	+checkbox(namebase+'6', extraclass+'6 '+extraclass)
+	.underlay
+		block
+
+mixin 12checkbox(namebase, extraclass)
+	+checkbox(namebase+'1', extraclass+'1 '+extraclass)
+	+checkbox(namebase+'2', extraclass+'2 '+extraclass)
+	+checkbox(namebase+'3', extraclass+'3 '+extraclass)
+	+checkbox(namebase+'4', extraclass+'4 '+extraclass)
+	+checkbox(namebase+'5', extraclass+'5 '+extraclass)
+	+checkbox(namebase+'6', extraclass+'6 '+extraclass)
+	+checkbox(namebase+'7', extraclass+'7 '+extraclass)
+	+checkbox(namebase+'8', extraclass+'8 '+extraclass)
+	+checkbox(namebase+'9', extraclass+'9 '+extraclass)
+	+checkbox(namebase+'10', extraclass+'10 '+extraclass)
+	+checkbox(namebase+'11', extraclass+'11 '+extraclass)
+	+checkbox(namebase+'12', extraclass+'12 '+extraclass)
 	.underlay
 		block
 
@@ -87,13 +103,13 @@ mixin rollresist(name, stat)
 		.col100
 			h1(data-i18n='choosesheetcopy')
 		.col100
-			select(name='attr_freebooterorfaction')
+			select(name='attr_freebooterorcrew')
 				optgroup
-					option() #{translation["freebooterorfaction"]}
+					option() #{translation["freebooterorcrew"]}
 					option() #{translation["freebootersheet"]}
-					option() #{translation["factionsheet"]}
+					option() #{translation["crewsheet"]}
 	include pug/character.pug
-	include pug/faction.pug
+	include pug/crew.pug
 
 |
 include pug/rolltemplate.pug

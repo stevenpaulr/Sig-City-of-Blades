@@ -43,6 +43,42 @@ Object.keys(data.devotions).forEach(devotion => {
 	});
 });
 
+Object.keys(data.crews).forEach(crew => {
+	console.log(getTranslation(crew));
+
+	data.crews[crew].faction = getTranslation(data.crews[crew].faction);
+	data.crews[crew].factionsubtitle = getTranslation(data.crews[crew].factionsubtitle);
+	data.crews[crew].gear.forEach(tgear => {
+		tgear.gearname = getTranslation(tgear.gearname);
+		if(tgear.effect){
+			tgear.effect = getTranslation(tgear.effect);
+		}
+	});
+	data.crews[crew].contacts.forEach(contact => {
+		contact.name = getTranslation(contact.name);
+		contact.aspect = getTranslation(contact.aspect);
+	});
+	
+	data.crews[crew].advances.forEach(advance => {
+		advance.advname = getTranslation(advance.advname);
+		advance.advdescription = getTranslation(advance.advdescription);
+	});
+
+	data.crews[crew].claims.forEach(claim => {
+		claim.name = getTranslation(claim.name);
+		claim.type = getTranslation(claim.type);
+	});
+
+
+});
+
+data.factionlist.forEach(faction => {
+	console.log(getTranslation(faction.name));
+
+	faction.name = getTranslation(faction.name);
+});
+
+
 /* Utility functions - shouldn't need to touch most of these */
 //Completely lifted from joesinghaus
 //There are probably many that I don't need ¯\_(ツ)_/¯
@@ -142,35 +178,19 @@ const markXP = async (attribute) => {
 
 //Functions for actions happening in the sheet
 
-on("change:freebooterorfaction", event => {
+on("change:freebooterorcrew", event => {
 
-	getAttrs(["freebooterorfaction", "change_attributes"], v => {
-		console.log(v.freebooterorfaction);
+	getAttrs(["freebooterorcrew", "change_attributes"], v => {
+		console.log(v.freebooterorcrew);
 
-		if(v.freebooterorfaction == "Freebooter Sheet"){
+		if(v.freebooterorcrew == "Freebooter Sheet"){
 			setAttr("sheettype", 1);
-		} else if (v.freebooterorfaction == "Faction Sheet"){
+		} else if (v.freebooterorcrew == "Crew Sheet"){
 			setAttr("sheettype", 2);
 		}
 
 	});
 
-});
-
-on("change:culture", event=>{
-
-	getAttrs(["culture", "change_attributes"], v => {
-		console.log(v.culture);
-
-		fillRepeatingSectionFromData("cultureadvances",data.cultures[v.culture].advances, true);
-
-		setAttr("culture_drive", data.cultures[v.culture].drive);
-		setAttr("study", data.cultures[v.culture].study);
-		setAttr("survey", data.cultures[v.culture].survey);
-		setAttr("reveal", data.cultures[v.culture].reveal);
-		setAttr("tinker", data.cultures[v.culture].tinker);
-
-	});
 });
 
 //Calculate Insight
@@ -223,6 +243,21 @@ on("change:channel change:command change:consort change:sway", function() {
 });
 
 
+on("change:culture", event=>{
+
+	getAttrs(["culture", "change_attributes"], v => {
+		console.log(v.culture);
+
+		fillRepeatingSectionFromData("cultureadvances",data.cultures[v.culture].advances, true);
+
+		setAttr("culture_drive", data.cultures[v.culture].drive);
+		setAttr("study", data.cultures[v.culture].study);
+		setAttr("survey", data.cultures[v.culture].survey);
+		setAttr("reveal", data.cultures[v.culture].reveal);
+		setAttr("tinker", data.cultures[v.culture].tinker);
+
+	});
+});
 
 on("change:lineage", event=>{
 
@@ -257,18 +292,29 @@ on("change:devotion", event=>{
 });
 
 
-on("change:faction", event=>{
+on("change:crew", event=>{
 
-	getAttrs(["faction", "change_attributes"], v => {
-		console.log(v.faction);
+	getAttrs(["crew", "change_attributes"], v => {
+		console.log(v.crew);
 
-		setAttr("factionselected", v.faction);
+		setAttr("crew", v.crew);
+		setAttr("factionselected", v.crew);
 
-		if(v.faction == 0){
+		if(v.crew == 0){
 			return
 		}
 
-		setAttr("factionimage",urlbase +"/Images/"+ data.factions[v.faction].img);
+		let thiscrew = data.crews[v.crew];
+
+		setAttr("crewimage",urlbase +"/Images/"+ thiscrew.img);
+		setAttr("faction_name", thiscrew.faction);
+		setAttr("faction_subtitle", thiscrew.factionsubtitle);
+
+		fillRepeatingSectionFromData("gear",thiscrew.gear, true);
+		fillRepeatingSectionFromData("contacts",thiscrew.contacts, true);
+		fillRepeatingSectionFromData("advances",thiscrew.advances, true);
+		fillRepeatingSectionFromData("factions",data.factionlist, true);
+		fillRepeatingSectionFromData("claims",thiscrew.claims, true);
 	});
 });
 

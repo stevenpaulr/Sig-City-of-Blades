@@ -1,0 +1,67 @@
+.factionsheet.flex-wrap
+	+hidden-input('factionselected')(value=0).factionselected
+	.faction-selector
+		select(name='attr_crew')
+			optgroup
+				option(value='0', selected=true) #{translation["selectcrew"]}
+				each crew in crews
+					option(value=crew) #{translation[crew]}
+
+	.factionsheetmain
+		//Left Column
+		.col35.leftcolumn
+			+hidden-input('crewimage')
+			img(name='attr_crewimage')
+			.title(data-i18n="who serve")
+			+text-input('faction_name', '')
+			+text-input('faction_subtitle').subtitle
+			.title(data-i18n="gear")
+			.repeating_gear
+				fieldset.repeating_gear
+					+checkbox('gearcheck','gearcheck')
+					+text-input('gearname')(data-i18n-placeholder='gearname')
+					+text-input('effect').effect
+
+			.title(data-i18n="contacts")
+			.repeating_contacts
+				fieldset.repeating_contacts
+					+text-input('name').contactname
+					+text-input('aspect').contactaspect
+	
+		//middle column
+		.col40.flex-wrap.middlecolumn
+			.col100
+				.title(data-i18n="advances")
+				.repeating_advances
+					fieldset.repeating_advances 
+						+checkbox('advancecheck','advancecheck')
+						+text-input('advname').advname
+						+textarea('advdescription').advdescription
+			.col50
+				.title(data-i18n="treasury").treasury
+				.twelvecheckbox
+					+12checkbox('treasury','hexbox')
+						.twelveboxlabel T
+
+			.col50
+				.title(data-i18n="infamy").infamy
+				.sixcheckbox
+					+6checkbox('infamy','hexbox')
+						.sixboxlabel I
+
+
+
+		//right column
+		.col25.rightcolumn
+			.title(data-i18n="faction")
+			.repeating_factions
+				fieldset.repeating_factions
+					+number-input('tier')(min='0', max='5').tier
+					+number-input('status')(min='-3', max='3').status
+					+text-input('name').factionname
+			.title(data-i18n="claims")
+			.repeating_claims
+				fieldset.repeating_claims
+					+text-input('type').claimtype
+					+text-input('name').claimname
+	
