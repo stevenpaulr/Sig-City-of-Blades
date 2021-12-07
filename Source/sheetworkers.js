@@ -299,7 +299,7 @@ on("change:crew", event=>{
 
 		setAttr("crew", v.crew);
 		setAttr("factionselected", v.crew);
-
+F
 		if(v.crew == 0){
 			return
 		}
