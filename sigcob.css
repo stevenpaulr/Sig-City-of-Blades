@@ -1019,6 +1019,9 @@ button.title {
   margin: 0 0 0 35px;
   height: 100px;
 }
+.factionsheet .repeating_factions {
+  /* Firefox */
+}
 .factionsheet .repeating_factions .repitem {
   display: flex;
   flex-wrap: nowrap;
@@ -1044,6 +1047,9 @@ button.title {
 .factionsheet .repeating_factions input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.factionsheet .repeating_factions input[type=number] {
+  -moz-appearance: textfield;
 }
 .factionsheet .repeating_claims .repitem {
   display: flex;
