@@ -324,13 +324,11 @@ on("change:crew", event=>{
 				const setObj = {}; 
 				idArray.forEach((id)=>{//iterate over the repeating section ids
 					
-					console.log(id);
-
 					if(attributes[`repeating_factions_${id}_name`] == thiscrew.faction){//compare the names
 						setObj[`repeating_factions_${id}_status`] = 3;//store the status value change
 					}else{
 						//I think you're going to want an else case here. If it's a simple one (like otherwise status is set to 0), then you could just do it as a ternary.
-						setObj[`repeating_factions_${id}_status`] = 0;
+						setObj[`repeating_factions_${id}_status`] = "";
 					}
 				});
 				setAttrs(setObj);//Apply the changes.

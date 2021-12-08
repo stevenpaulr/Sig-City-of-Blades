@@ -489,7 +489,7 @@
 			]
 		},
 		"voidstriders":{
-			"img":"VoidStridersLogo.jpg",
+			"img":"VoidStridersLogo-fixed.jpg",
 			"faction":"portalsmiths",
 			"factionsubtitle":"keysandwedges",
 			"gear":[
