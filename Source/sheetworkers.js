@@ -187,6 +187,9 @@ on("change:freebooterorcrew", event => {
 			setAttr("sheettype", 1);
 		} else if (v.freebooterorcrew == "Crew Sheet"){
 			setAttr("sheettype", 2);
+
+			fillRepeatingSectionFromData("factions",data.factionlist, true, setFactionStatus(thiscrew));
+
 		}
 
 	});
@@ -299,7 +302,7 @@ on("change:crew", event=>{
 
 		setAttr("crew", v.crew);
 		setAttr("factionselected", v.crew);
-F
+
 		if(v.crew == 0){
 			return
 		}
@@ -313,8 +316,46 @@ F
 		fillRepeatingSectionFromData("gear",thiscrew.gear, true);
 		fillRepeatingSectionFromData("contacts",thiscrew.contacts, true);
 		fillRepeatingSectionFromData("advances",thiscrew.advances, true);
-		fillRepeatingSectionFromData("factions",data.factionlist, true);
 		fillRepeatingSectionFromData("claims",thiscrew.claims, true);
+
+		getSectionIDs("factions",function(idArray) {
+			let getArr = idArray.map(id=>`repeating_factions_${id}_name`);//Consolidate all the attributes to get into a single array
+			getAttrs(getArr,(attributes)=>{//Grab the attribute values
+				const setObj = {}; 
+				idArray.forEach((id)=>{//iterate over the repeating section ids
+					
+					console.log(id);
+
+					if(attributes[`repeating_factions_${id}_name`] == thiscrew.faction){//compare the names
+						setObj[`repeating_factions_${id}_status`] = 3;//store the status value change
+					}else{
+						//I think you're going to want an else case here. If it's a simple one (like otherwise status is set to 0), then you could just do it as a ternary.
+						setObj[`repeating_factions_${id}_status`] = 0;
+					}
+				});
+				setAttrs(setObj);//Apply the changes.
+			});
+		});
+
+
+
+
+/* 		getSectionIDs("factions", function(idarray) {
+			for (var i=0; i < idarray.length; i++){
+
+				getAttrs(["repeating_factions_"+idarray[i]+"_name"], x => {
+					if(x[Object.keys(x)[0]] == thiscrew.faction){
+
+						setAttr("repeating_factions_"+idarray[i]+"_status", 3);
+
+					}
+				});
+			}
+		}); */
+
+
+
+
 	});
 });
 

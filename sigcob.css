@@ -1089,7 +1089,7 @@ button.title {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
-  color: black;
+  color: white;
   -webkit-text-fill-color: white;
   text-shadow: 2px 2px 0 #000, -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   background-color: #000;
